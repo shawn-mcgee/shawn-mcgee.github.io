@@ -1,0 +1,32 @@
+---
+permalink: "/posts/{{ date | slugify }}/{{ title | slugify }}/"
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>{{ title }}</title>
+  </head>
+
+  {% if title %}
+    <h1>
+      {{ title }}
+    </h1>
+  {% endif %}
+
+  {% if date %}
+    <h1>
+      {{ date }}
+    </h1>
+  {% endif %}
+
+  {% if author %}
+    {{ author }}
+  {% endif %}
+
+  <body>
+    {{ content }}
+  </body>
+</html>
