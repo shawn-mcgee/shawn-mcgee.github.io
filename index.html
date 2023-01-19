@@ -2,10 +2,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="./css/style.css" rel="stylesheet" />
-    <title></title>
+    <link href="./asset/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
+    <meta charset="UTF-8" />
+    <title>Home</title>
   </head>
-  <body><p>This is a static site generated with eleventy!</p>
-<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
-</body>
+  <body class="bg-pink-900">
+
+    <div class="grid grid-flow-row container mx-auto h-screen place-content-center place-items-center space-y-4">
+
+      <img class="w-32 h-32 rounded-full" src="./asset/png/profile.png" />
+      <p class="text-center text-white text-6xl font-serif font-bold ">Shawn McGee</p>
+      <p class="text-center text-white text-xl  font-serif           ">Full-time dad, Part-Time DM, Some-Time Programmer.</p>
+      <div class="grid grid-flow-col w-1/2 place-items-center">
+        <a href="https://github.com/shawn-mcgee" title="GitHub">
+          <img class="invert dark:invert-0 w-8 h-8" src="./asset/svg/github-white.svg" />
+        </a>
+        <a href="https://tinycthulu.itch.io/" title="Itch.io">
+          <img class="invert dark:invert-0 w-8 h-8" src="./asset/svg/itchio-white.svg" />
+        </a>
+        <a href="./posts" title="Posts">
+          <i class="ph-scroll text-white text-4xl"></i>
+        </a>
+      </div>
+    </div>
+
+  </body>
 </html>
