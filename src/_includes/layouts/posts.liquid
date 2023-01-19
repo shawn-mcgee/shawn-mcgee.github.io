@@ -1,0 +1,33 @@
+---
+title: Posts
+permalink: "./posts/"
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../asset/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% assign posts = collections.post | reverse %}
+
+    <ol>
+      {% for post in posts %}
+        <li>
+          <a href={{ post.url }}>
+            <span class="rounded shadow-sm hover:shadow-xl">
+              <span class="font-sans font-bold">{{ post.data.title }}
+              </span>
+              <span class="font-sans italic   ">({{ post.data.date }})</span>
+            </span>
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+
+  </body>
+</html>

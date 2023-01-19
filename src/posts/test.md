@@ -1,9 +1,12 @@
 ---
-title: Test
+title: Hello World
 date: "2023-01-17"
-tags: post
-
-layout: post
+layout: layouts/post
 ---
 
-This is a test post!
+This is a test post! Written in markdown and generated using eleventy.js and prism.js!
+```java
+public static void main(String[] args) {
+  System.out.println("Hello World")
+}
+```
