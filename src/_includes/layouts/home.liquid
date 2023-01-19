@@ -8,29 +8,59 @@ permalink: "/"
   <head>
     <link href="./asset/css/style.css" rel="stylesheet" />
     <script src="https://unpkg.com/phosphor-icons"></script>
-
     <meta charset="UTF-8" />
     <title>{{ title }}</title>
   </head>
   <body class="bg-pink-900">
 
-    <div class="grid grid-flow-row container mx-auto h-screen place-content-center place-items-center space-y-4">
+    <div class="container w-screen mx-auto">
 
-      <img class="w-32 h-32 rounded-full" src="./asset/png/profile.png" />
-      <p class="text-center text-white text-6xl font-serif font-bold ">Shawn McGee</p>
-      <p class="text-center text-white text-xl  font-serif           ">Full-time dad, Part-Time DM, Some-Time Programmer.</p>
-      <div class="grid grid-flow-col w-1/2 place-items-center">
-        <a href="https://github.com/shawn-mcgee" title="GitHub">
-          <img class="invert dark:invert-0 w-8 h-8" src="./asset/svg/github-white.svg" />
-        </a>
-        <a href="https://tinycthulu.itch.io/" title="Itch.io">
-          <img class="invert dark:invert-0 w-8 h-8" src="./asset/svg/itchio-white.svg" />
-        </a>
-        <a href="./posts" title="Posts">
-          <i class="ph-scroll text-white text-4xl"></i>
-        </a>
+      <div class="grid grid-flow-row h-screen place-content-center place-items-center gap-y-4">
+        <img class="w-32 h-32 rounded-full" src="./asset/png/profile.png" />
+        <p class="text-center text-white text-6xl font-serif font-bold ">Shawn McGee</p>
+        <p class="text-center text-white text-xl  font-serif           ">Full-time dad, Part-Time DM, Some-Time Programmer.</p>
+        <div class="flex w-full place-content-center place-items-center space-x-2">
+          <a href="#posts" class="cursor-pointer flex bg-pink-300 hover:bg-pink-200 rounded p-2 gap-x-1 place-items-center">
+            <i class="ph-scroll text-2xl font-bold"></i>
+            Blog
+          </a>
+          <a href="https://github.com/shawn-mcgee" class="cursor-pointer flex bg-pink-300 hover:bg-pink-200 rounded p-2 gap-x-1 place-items-center">
+            <img class="invert w-6 h-6" src="./asset/svg/github-white.svg" />
+            GitHub
+          </a>
+          <a href="https://tinycthulu.itch.io/" class="cursor-pointer flex bg-pink-300 hover:bg-pink-200 rounded p-2 gap-x-1 place-items-center">
+            <img class="invert w-6 h-6" src="./asset/svg/itchio-white.svg" />
+            Itch.io
+          </a>
+        </div>
       </div>
+
+      <a id="posts"></a>
+      {% assign posts = collections.post | reverse %}
+      <div class="grid place-content-center place-items-center gap-2">
+        {% for post in posts %}
+          <a href={{ post.url }} class="w-full bg-pink-300 rounded shadow-xl px-4 py-2">
+            <div class="text-xl font-bold">
+              {{ post.data.title }}
+            </div>
+            <div class="text-sm italic">
+              {{ post.data.author }}
+            </div>
+            <div class="text-sm italic">
+              {{ post.data.date }}
+            </div>
+            <iframe
+              src="{{post.url}}"
+              scrolling="no"
+              class="w-full"></iframe>
+          </a>
+        {% endfor %}
+      </div>
+
+
     </div>
+
+
 
   </body>
 </html>

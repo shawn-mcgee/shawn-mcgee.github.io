@@ -8,28 +8,28 @@ permalink: "/posts/{{ date | slugify }}/{{ title | slugify }}/"
   <head>
     <link href="../../../asset/css/style.css" rel="stylesheet" />
     <script src="https://unpkg.com/phosphor-icons"></script>
-
     <meta charset="UTF-8" />
     <title>{{ title }}</title>
   </head>
 
-  {% if title %}
-    <h1>
-      {{ title }}
-    </h1>
-  {% endif %}
+  <body class="bg-pink-900">
 
-  {% if date %}
-    <h1>
-      {{ date }}
-    </h1>
-  {% endif %}
+    <div class="grid container mx-auto p-4">
+      <div class="text-4xl text-left font-mono font-bold text-white">{{ title }}</div>
+      <div class="flex gap-2 px-1">
+        {% if author %}
+          <span class="text-sm text-left font-serif italic text-pink-300">{{ author }}</span>
+        {% endif %}
+        {% if date %}
+          <span class="text-sm text-left font-serif italic text-pink-300">{{ date }}</span>
+        {% endif %}
+      </div>
 
-  {% if author %}
-    {{ author }}
-  {% endif %}
+      <div class="h-12"></div>
+      <div class="w-full place-content-center place-items-center rounded-xl bg-pink-200 p-4 text-justify">
+        {{ content }}
+      </div>
+    </div>
 
-  <body>
-    {{ content }}
   </body>
 </html>
