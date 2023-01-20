@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +10,7 @@
     <link href="/asset/css/style.css" rel="stylesheet" />
     <script src="https://unpkg.com/phosphor-icons"></script>
 
-    <title></title>
+    <title>Posts</title>
   </head>
   <body class="bg-pink-900">
     <div class="container mx-auto grid grid-flow-row justify-center">
@@ -41,13 +43,12 @@
     &lt;head&gt;
       &lt;link href=&#34;/asset/css/style.css&#34; rel=&#34;stylesheet&#34; /&gt;
       &lt;script src=&#34;https://unpkg.com/phosphor-icons&#34;&gt;&lt;/script&gt;
-
       &lt;title&gt;{{ title }}&lt;/title&gt;
     &lt;/head&gt;
-    &lt;div class=&#34;prose&#34;&gt;
+    &lt;article class=&#34;prose&#34;&gt;
       &lt;p&gt;Coming Soon!!&lt;/p&gt;
 
-    &lt;/div&gt;"></iframe>
+    &lt;/article&gt;"></iframe>
             </div>
           </a>
         
@@ -84,16 +85,14 @@
     &lt;head&gt;
       &lt;link href=&#34;/asset/css/style.css&#34; rel=&#34;stylesheet&#34; /&gt;
       &lt;script src=&#34;https://unpkg.com/phosphor-icons&#34;&gt;&lt;/script&gt;
-
       &lt;title&gt;{{ title }}&lt;/title&gt;
     &lt;/head&gt;
-    &lt;div class=&#34;prose&#34;&gt;
-      
-            &lt;h3&gt;Hello World!&lt;/h3&gt;
+    &lt;article class=&#34;prose&#34;&gt;
+      &lt;h3&gt;Hello World!&lt;/h3&gt;
 &lt;p&gt;This is a test post! The content of which is written in markdown and then
 consumed by &lt;a href=&#34;https://11ty.dev&#34;&gt;eleventy.js&lt;/a&gt; to generate the page you are reading!&lt;/p&gt;
 &lt;p&gt;(take a look)&lt;/p&gt;
-&lt;pre class=&#34;language-markdown&#34;&gt;&lt;code class=&#34;language-markdown&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- This section contains metadata about the post, written in YAML --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token hr punctuation&#34;&gt;---&lt;/span&gt;&lt;br&gt;title: Hello World&lt;br&gt;date: &#34;2023-01-17&#34;&lt;br&gt;author: Shawn McGee&lt;br&gt;&lt;span class=&#34;token title important&#34;&gt;layout: layouts/post&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;token title important&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;###&lt;/span&gt; Hello World!&lt;/span&gt;&lt;br&gt;&lt;br&gt;This is a test post! The content of which is written in markdown and then &lt;br&gt;consumed by &lt;span class=&#34;token url&#34;&gt;[&lt;span class=&#34;token content&#34;&gt;eleventy.js&lt;/span&gt;](&lt;span class=&#34;token url&#34;&gt;https://11ty.dev&lt;/span&gt;)&lt;/span&gt; to generate the page you are reading!&lt;br&gt;&lt;br&gt;(take a look)&lt;br&gt;&lt;br&gt;...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-markdown&#34;&gt;&lt;code class=&#34;language-markdown&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- This section contains metadata about the post, written in YAML --&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token hr punctuation&#34;&gt;---&lt;/span&gt;&lt;br&gt;title: Hello World&lt;br&gt;date: &#34;2023-01-17&#34;&lt;br&gt;author: Shawn McGee&lt;br&gt;&lt;span class=&#34;token title important&#34;&gt;layout: layouts/post&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;token title important&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;###&lt;/span&gt; Hello World!&lt;/span&gt;&lt;br&gt;&lt;br&gt;This is a test post! The content of which is written in markdown and then &lt;br&gt;consumed by &lt;span class=&#34;token url&#34;&gt;[&lt;span class=&#34;token content&#34;&gt;eleventy.js&lt;/span&gt;](&lt;span class=&#34;token url&#34;&gt;https://11ty.dev&lt;/span&gt;)&lt;/span&gt; to generate the page you are reading!&lt;br&gt;&lt;br&gt;(take a look)&lt;br&gt;&lt;br&gt;...&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I have opted to style this blog using the infamous
 &lt;a href=&#34;https://tailwindcss.com&#34;&gt;tailwindcss&lt;/a&gt; along with
 &lt;a href=&#34;https://prismjs.com/&#34;&gt;prism.js&lt;/a&gt; for syntax highlighting.&lt;/p&gt;
@@ -101,8 +100,7 @@ consumed by &lt;a href=&#34;https://11ty.dev&#34;&gt;eleventy.js&lt;/a&gt; to ge
 &lt;code&gt;Hello World&lt;/code&gt; written in the language with which I first fell in love.&lt;/p&gt;
 &lt;pre class=&#34;language-java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;HelloWorld&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Hello World!&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 
-          
-    &lt;/div&gt;"></iframe>
+    &lt;/article&gt;"></iframe>
             </div>
           </a>
         
