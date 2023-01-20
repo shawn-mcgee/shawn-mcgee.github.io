@@ -11,7 +11,7 @@ module.exports = {
         sans : [ 'Noto Sans'     , ...defaultTheme.fontFamily.sans  ],
         mono : [ 'JetBrains Mono', ...defaultTheme.fontFamily.mono  ]
       }
-    },
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
