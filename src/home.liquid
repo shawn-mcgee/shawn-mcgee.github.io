@@ -86,7 +86,7 @@ permalink: "/"
                 scrolling="no"
                 title="{{ post.data.title }}"
                 class="w-full h-48 pointer-events-none"
-                srcdoc="{{ post.data.content | article | escape }}"></iframe>
+                srcdoc="{{ post.templateContent | article | escape }}"></iframe>
             </div>
           </a>
         {% endfor %}
