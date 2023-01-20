@@ -1,35 +1,70 @@
 ---
-tags: post
+tags: [ post ]
 permalink: "/posts/{{ date | slugify }}/{{ title | slugify }}/"
 ---
 
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../../../asset/css/style.css" rel="stylesheet" />
-    <script src="https://unpkg.com/phosphor-icons"></script>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/asset/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
     <title>{{ title }}</title>
   </head>
 
   <body class="bg-pink-900">
-
-    <div class="grid container mx-auto p-4">
-      <div class="text-4xl text-left font-mono font-bold text-white">{{ title }}</div>
-      <div class="flex gap-2 px-1">
-        {% if author %}
-          <span class="text-sm text-left font-serif italic text-pink-300">{{ author }}</span>
-        {% endif %}
-        {% if date %}
-          <span class="text-sm text-left font-serif italic text-pink-300">{{ date }}</span>
-        {% endif %}
-      </div>
-
+    <div class="container mx-auto grid grid-flow-row justify-center">
       <div class="h-12"></div>
-      <div class="w-full place-content-center place-items-center rounded-xl bg-pink-200 p-4 text-justify">
-        {{ content }}
+      <div class="flex flex-col gap-1">
+        <span class="text-3xl font-mono font-bold text-white">{{ title }}</span>
+        <div>
+          <div class="flex flex-row gap-1 float-left text-sm font-sans text-pink-300">
+            <span class="text-sm font-sans text-pink-300">{{ author }}</span>/
+            <span class="text-sm font-sans text-pink-300">{{ date }}</span>
+          </div>
+          {% assign tags = tags | slice: 1, 5 %}
+          <div class="flex flex-row gap-1 float-right">
+            {% for tag in tags %}
+              <div class="flex flex-row border rounded-full border-pink-300 px-2 place-content-center">
+                <span class="text-sm font-mono text-pink-300">#{{ tag }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="h-6"></div>
+        <div class="flex flex-col rounded p-4 bg-pink-200 place-content-center">
+          <article class="w-full prose prose-md">
+            {{ content }}
+          </article>
+        </div>
       </div>
-    </div>
+      <div class="h-2"></div>
+      <div class="grid grid-flow-col grid-cols-2 justify-center gap-4">
+        {% assign previousPost = collections.post | getPreviousCollectionItem: page %}
+        {% assign nextPost = collections.post | getNextCollectionItem: page %}
 
+        <a
+          href="{{ previousPost.url }}"
+          title="Previous Post"
+          class="flex flex-row rounded justify-start bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
+          <i class="ph-arrow-left float-left text-2xl font-bold"></i>
+        </a>
+
+        <a
+          href="{{ nextPost.url }}"
+          title="Next Post"
+          class="flex flex-row rounded justify-end bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
+          <i class="ph-arrow-right text-2xl font-bold"></i>
+        </a>
+
+
+      </div>
+      <div class="h-12"></div>
+
+
+    </div>
   </body>
 </html>
