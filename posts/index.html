@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
-<html lang="en-us">
+
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,62 +8,13 @@
     <link href="/asset/css/style.css" rel="stylesheet" />
     <script src="https://unpkg.com/phosphor-icons"></script>
 
-    <title>Shawn McGee</title>
+    <title></title>
   </head>
-
   <body class="bg-pink-900">
-
     <div class="container mx-auto grid grid-flow-row justify-center">
-      <div class="flex flex-col h-screen place-content-center place-items-center gap-4">
-        <img
-          class="w-32 h-32 border-2 rounded-full border-pink-300 shadow-2xl"
-          src="/asset/png/profile.png"
-          alt="A smiling Kaiju in a neon tsunami, digital art." />
-        <span class="text-center text-white text-6xl font-serif font-bold ">Shawn McGee</span>
-        <span class="text-center text-white text-xl  font-serif">
-          Full-time dad, Part-Time DM, Some-Time Programmer.</span>
-        <div class="flex flex-row justify-center gap-x-2">
-          <a
-            href="#posts"
-            title="Posts"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <i class="ph-scroll text-2xl font-bold"></i>
-            Blog
-          </a>
-          <a
-            href="https://github.com/shawn-mcgee"
-            title="GitHub"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <img
-              class="invert w-6 h-6"
-              src="/asset/svg/github-white.svg"
-              alt="GitHub logo" />
-            GitHub
-          </a>
-          <a
-            href="https://tinycthulu.itch.io/"
-            title="Itch.io"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <img
-              class="invert w-6 h-6"
-              src="/asset/svg/itchio-white.svg"
-              alt="Itch.io logo" />
-            Itch.io
-          </a>
-          <a
-            href="/about/"
-            title="About"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <i class="ph-question text-2xl font-bold"></i>
-            About
-          </a>
-        </div>
-      </div>
-
-
-      <a id="posts"></a>
+      <span class="text-3xl font-mono font-bold text-white">Posts:</span>
       
-      <div class="flex flex-col justify-center gap-2">
+      <div class="grid grid-flow-col grid-cols-3 justify-center gap-2">
         
           <a href="/posts/2023-01-18/making-a-static-blog-with-eleventy-js/" class="flex flex-col grid-span-1 rounded bg-pink-300 shadow-2xl p-4 gap-1 hover:bg-pink-200 hover:drop-shadow-2xl">
             <span class="text-right text-sm font-sans italic">Shawn McGee</span>
@@ -156,16 +107,6 @@ consumed by &lt;a href=&#34;https://11ty.dev&#34;&gt;eleventy.js&lt;/a&gt; to ge
           </a>
         
       </div>
-      <div class="h-12"></div>
-      <div class="flex flex-row place-content-center">
-        <a
-          href="/posts/"
-          title="See More"
-          class="rounded-full flex flex-row place-content-center place-items-center bg-pink-900 hover:drop-shadow-2xl">
-          <i class=" ph-dots-three text-6xl text-center font-mono font-bold text-white"></i>
-        </a>
-      </div>
-      <div class="h-12"></div>
     </div>
   </body>
 </html>

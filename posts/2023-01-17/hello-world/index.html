@@ -2,32 +2,88 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../../../asset/css/style.css" rel="stylesheet" />
-    <script src="https://unpkg.com/phosphor-icons"></script>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/asset/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
     <title>Hello World</title>
   </head>
 
   <body class="bg-pink-900">
-
-    <div class="grid container mx-auto p-4">
-      <div class="text-4xl text-left font-mono font-bold text-white">Hello World</div>
-      <div class="flex gap-2 px-1">
-        
-          <span class="text-sm text-left font-serif italic text-pink-300">Shawn McGee</span>
-        
-        
-          <span class="text-sm text-left font-serif italic text-pink-300">2023-01-17</span>
-        
-      </div>
-
+    <div class="container mx-auto grid grid-flow-row justify-center">
       <div class="h-12"></div>
-      <div class="w-full place-content-center place-items-center rounded-xl bg-pink-200 p-4 text-justify">
-        <p>This is a test post! Written in markdown and generated using <code>eleventy.js</code> and <code>prism.js</code>!</p>
-<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+      <div class="flex flex-col gap-1">
+        <span class="text-3xl font-mono font-bold text-white">Hello World</span>
+        <div>
+          <div class="flex flex-row gap-1 float-left text-sm font-sans text-pink-300">
+            <span class="text-sm font-sans text-pink-300">Shawn McGee</span>/
+            <span class="text-sm font-sans text-pink-300">2023-01-17</span>
+          </div>
+          
+          <div class="flex flex-row gap-1 float-right">
+            
+              <div class="flex flex-row border rounded-full border-pink-300 px-2 place-content-center">
+                <span class="text-sm font-mono text-pink-300">#11ty</span>
+              </div>
+            
+              <div class="flex flex-row border rounded-full border-pink-300 px-2 place-content-center">
+                <span class="text-sm font-mono text-pink-300">#Eleventy</span>
+              </div>
+            
+              <div class="flex flex-row border rounded-full border-pink-300 px-2 place-content-center">
+                <span class="text-sm font-mono text-pink-300">#Tailwind</span>
+              </div>
+            
+              <div class="flex flex-row border rounded-full border-pink-300 px-2 place-content-center">
+                <span class="text-sm font-mono text-pink-300">#Prism</span>
+              </div>
+            
+          </div>
+        </div>
+        <div class="h-6"></div>
+        <div class="flex flex-col rounded p-4 bg-pink-200 place-content-center">
+          <article class="w-full prose prose-md">
+            <h3>Hello World!</h3>
+<p>This is a test post! The content of which is written in markdown and then
+consumed by <a href="https://11ty.dev">eleventy.js</a> to generate the page you are reading!</p>
+<p>(take a look)</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token comment">&lt;!-- This section contains metadata about the post, written in YAML --></span><br><span class="token hr punctuation">---</span><br>title: Hello World<br>date: "2023-01-17"<br>author: Shawn McGee<br><span class="token title important">layout: layouts/post<br><span class="token punctuation">---</span></span><br><br><span class="token title important"><span class="token punctuation">###</span> Hello World!</span><br><br>This is a test post! The content of which is written in markdown and then <br>consumed by <span class="token url">[<span class="token content">eleventy.js</span>](<span class="token url">https://11ty.dev</span>)</span> to generate the page you are reading!<br><br>(take a look)<br><br>...</code></pre>
+<p>I have opted to style this blog using the infamous
+<a href="https://tailwindcss.com">tailwindcss</a> along with
+<a href="https://prismjs.com/">prism.js</a> for syntax highlighting.</p>
+<p>In honor of those programmers who came before me I offer a simple rendition of
+<code>Hello World</code> written in the language with which I first fell in love.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span><br>  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+
+          </article>
+        </div>
+      </div>
+      <div class="h-2"></div>
+      <div class="grid grid-flow-col grid-cols-2 justify-center gap-4">
+        
+        
+
+        <a
+          href=""
+          title="Previous Post"
+          class="flex flex-row rounded justify-start bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
+          <i class="ph-arrow-left float-left text-2xl font-bold"></i>
+        </a>
+
+        <a
+          href="/posts/2023-01-18/making-a-static-blog-with-eleventy-js/"
+          title="Next Post"
+          class="flex flex-row rounded justify-end bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
+          <i class="ph-arrow-right text-2xl font-bold"></i>
+        </a>
+
 
       </div>
-    </div>
+      <div class="h-12"></div>
 
+
+    </div>
   </body>
 </html>
