@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "concurrently \"eleventy --serve\" \"tailwindcss -i ./src/asset/css/style.css -o ./dist/asset/css/style.css --watch\"",
-    "build": "rimraf ./dist/ & eleventy & tailwindcss -i ./src/asset/css/style.css -o ./dist/asset/css/style.css --minify"
+    "build": "eleventy & tailwindcss -i ./src/asset/css/style.css -o ./dist/asset/css/style.css --minify"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +15,6 @@
     "@tailwindcss/typography": "^0.5.9",
     "concurrently": "^7.6.0",
     "jsdom": "^21.0.0",
-    "rimraf": "^4.1.1",
     "tailwindcss": "^3.2.4"
   }
 }
