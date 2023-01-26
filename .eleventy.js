@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
       <script src="https://unpkg.com/phosphor-icons"></script>
       <title>{{ title }}</title>
     </head>
-    <article class="prose">
+    <article class="prose prose-sm prose-code:before:content-none prose-code:after:content-none">
       ${ value }
     </article>`
   })
