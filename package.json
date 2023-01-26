@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently \"eleventy --serve\" \"tailwindcss -i ./src/asset/css/style.css -o ./dist/asset/css/style.css --watch\"",
-    "build": "eleventy && tailwindcss -i ./src/asset/css/style.css -o ./dist/asset/css/style.css --minify"
+    "dev": "concurrently \"eleventy --serve\" \"tailwindcss -i ./src/assets/css/style.css -o ./dist/assets/css/style.css --watch\"",
+    "build": "eleventy && tailwindcss -i ./src/assets/css/style.css -o ./dist/assets/css/style.css --minify"
   },
   "author": "",
   "license": "ISC",

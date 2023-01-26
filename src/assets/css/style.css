@@ -14,7 +14,14 @@ html {
 
 pre {
   border-radius: 0.75rem;
+  min-width: 80ch;
 }
+
+.prose {
+  min-width: 80ch;
+}
+
+
 
 @tailwind base;
 @tailwind components;
