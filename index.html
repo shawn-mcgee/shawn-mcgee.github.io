@@ -1,136 +1,155 @@
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link href="/asset/css/style.css" rel="stylesheet" />
-    <script src="https://unpkg.com/phosphor-icons"></script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Shawn McGee</title>
   </head>
-
   <body class="bg-pink-900">
-
-    <div class="container mx-auto grid grid-flow-row justify-center">
-      <div class="flex flex-col h-screen place-content-center place-items-center gap-4">
-        <img
-          class="w-32 h-32 border-2 rounded-full border-pink-300 shadow-2xl"
-          src="/asset/png/profile.png"
-          alt="A smiling Kaiju in a neon tsunami, digital art." />
-        <span class="text-center text-white text-6xl font-serif font-bold ">Shawn McGee</span>
-        <span class="text-center text-white text-xl  font-serif">
-          Full-Time Dad, Part-Time DM, Some-Time Programmer.</span>
-        <div class="flex flex-row justify-center gap-x-2">
-          <a
-            href="#posts"
-            title="Posts"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <i class="ph-scroll text-2xl font-bold"></i>
-            Blog
-          </a>
-          <a
-            href="https://github.com/shawn-mcgee"
-            title="GitHub"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <img
-              class="invert w-6 h-6"
-              src="/asset/svg/github-white.svg"
-              alt="GitHub logo" />
-            GitHub
-          </a>
-          <a
-            href="https://tinycthulu.itch.io/"
-            title="Itch.io"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <img
-              class="invert w-6 h-6"
-              src="/asset/svg/itchio-white.svg"
-              alt="Itch.io logo" />
-            Itch.io
-          </a>
-          <a
-            href="/about/"
-            title="About"
-            class="flex flex-row rounded bg-pink-300 shadow-2xl p-2 gap-1 place-items-center hover:bg-pink-200 hover:drop-shadow-2xl">
-            <i class="ph-question text-2xl font-bold"></i>
-            About
-          </a>
-        </div>
+    <div class="flex flex-col h-screen justify-center items-center gap-2">
+      <img
+        src="/assets/png/profile.png"
+        alt="A Smiling Kaiju in a neon tsunami, digital art."
+        class="w-32 h-32 rounded-full border-2 border-pink-300 shadow-xl" />
+      <span class="text-center text-4xl sm:text-6xl font-serif font-bold text-white">Shawn McGee</span>
+      <span class="text-center text-md  sm:text-xl  font-serif           text-white">Full-Time Dad, Part-Time DM, Some-Time Programmer.</span>
+      <div class="flex flex-row flex-wrap gap-2 justify-center w-11/12 max-w-lg">
+        <a
+          title="Posts"
+          href="#posts"
+          class="basis-1/5 grow flex flex-row justify-center items-center gap-1 rounded bg-pink-300 p-2 hover:bg-pink-200 hover:drop-shadow-xl">
+          Posts
+        </a>
+        <a
+          title="GitHub"
+          href="https://github.com/shawn-mcgee"
+          class="basis-1/5 grow flex flex-row justify-center items-center gap-1 rounded bg-pink-300 p-2 hover:bg-pink-200 hover:drop-shadow-xl">
+          <img
+            src="/assets/svg/github-white.svg"
+            alt="GitHub Logo"
+            class="invert w-4 h-4">
+          GitHub
+        </a>
+        <a
+          title="Itch.io"
+          href="https://tinycthulu.itch.io"
+          class="basis-1/5 grow flex flex-row justify-center items-center gap-1 rounded bg-pink-300 p-2 hover:bg-pink-200 hover:drop-shadow-xl">
+          <img
+            src="/assets/svg/itchio-white.svg"
+            alt="Itch.io Logo"
+            class="invert w-4" />
+          Itch.io
+        </a>
+        <a
+          title="About"
+          href="/about/"
+          class="basis-1/5 grow flex flex-row justify-center items-center gap-1 rounded bg-pink-300 p-2 hover:bg-pink-200 hover:drop-shadow-xl">
+          About
+        </a>
       </div>
+    </div>
 
-
-      <a id="posts"></a>
+    <a id="posts"></a>
+    
+    <div class="flex flex-col items-center gap-2">
       
-      <div class="flex flex-col justify-center gap-2">
-        
-          <a href="/posts/2023-01-18/making-a-static-blog-with-eleventy-js/" class="flex flex-col grid-span-1 rounded bg-pink-300 shadow-2xl p-4 gap-1 hover:bg-pink-200 hover:drop-shadow-2xl">
-            <span class="text-right text-sm font-sans italic">Shawn McGee</span>
-            <span class="text-right text-sm font-sans italic">2023-01-18</span>
-            <span class="text-xl font-mono font-bold">Making a Static Blog with Eleventy.js</span>
+        <a
+          title="Making a Static Blog with Eleventy.js"
+          href="/posts/2023-01-18/making-a-static-blog-with-eleventy-js/"
+          class="grow flex flex-col w-11/12 max-w-lg gap-2 rounded bg-pink-300 p-2">
+          <span class="text-right text-sm font-sans italic">Shawn McGee</span>
+          <span class="text-right text-sm font-sans italic">2023-01-18</span>
+          <span class="text-xl font-mono font-bold">Making a Static Blog with Eleventy.js</span>
+          
+          <div class="flex flex-row flex-wrap gap-1">
             
-            <div class="flex flex-row gap-1">
-              
-                <div class="flex flex-row border rounded-full border-pink-900 px-2 place-content-center">
-                  <span class="text-sm font-mono text-pink-900">#11ty</span>
-                </div>
-              
-                <div class="flex flex-row border rounded-full border-pink-900 px-2 place-content-center">
-                  <span class="text-sm font-mono text-pink-900">#Eleventy</span>
-                </div>
-              
-            </div>
-            <div class="bg-pink-200 rounded p-2">
-              <iframe
-                scrolling="no"
-                title="Making a Static Blog with Eleventy.js"
-                class="w-full h-48 pointer-events-none"
-                srcdoc="
+              <span class="text-sm font-mono text-pink-900 border border-pink-900 rounded-full px-2">#11ty</span>
+            
+              <span class="text-sm font-mono text-pink-900 border border-pink-900 rounded-full px-2">#Eleventy</span>
+            
+          </div>
+          <div class="bg-pink-200 rounded p-2">
+            <iframe
+              scrolling="no"
+              title="Making a Static Blog with Eleventy.js"
+              class="w-full h-48 pointer-events-none"
+              srcdoc="
     &lt;head&gt;
-      &lt;link href=&#34;/asset/css/style.css&#34; rel=&#34;stylesheet&#34; /&gt;
+      &lt;link href=&#34;/assets/css/style.css&#34; rel=&#34;stylesheet&#34; /&gt;
       &lt;script src=&#34;https://unpkg.com/phosphor-icons&#34;&gt;&lt;/script&gt;
       &lt;title&gt;{{ title }}&lt;/title&gt;
     &lt;/head&gt;
     &lt;article class=&#34;prose&#34;&gt;
-      &lt;p&gt;Coming Soon!!&lt;/p&gt;
+      &lt;p&gt;I have spent the last few months in somewhat of a developer crisis.&lt;/p&gt;
+&lt;p&gt;I began programming in middle school when I checked out a book on ActionScript
+from the library and obtained a free trial of AdobeFlash to experiment with.&lt;/p&gt;
+&lt;p&gt;In order to become a web developer, one must become a
+&lt;a href=&#34;https://www.dictionary.com/browse/polyglot&#34;&gt;Polyglot&lt;/a&gt; Programmer.&lt;/p&gt;
+&lt;p&gt;The internet is overflowing with developer videos, blogs, and tutorials that
+promise the quickest, easiest, most elegant, most correct way of solving
+problems or achieving success. In my experience, I find there exist truly
+useful insights, but to gather each into your arms like the dime-a-dozen
+dandelions they are does not a problem solve.&lt;/p&gt;
+&lt;p&gt;That is to say, each insight is a valuable tool in its own regard, but&lt;/p&gt;
+&lt;p&gt;That is to say, the true work of a developer is solving problems&lt;/p&gt;
+&lt;p&gt;In order to be a web developer one must become a Polyglot Programmer, because
+the web itself exists within an undulating, multilingual liminal space.
+Browsers, Bundlers, Compilers, and Transpilers alike play a roll in TheStack.&lt;/p&gt;
+&lt;p&gt;Languages like C, C++, C#, Go, Dart, Flutter, HTML, JS, CSS&lt;/p&gt;
+&lt;p&gt;I have tried (and failed) to use other static site generators like
+&lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Getting Started&lt;/h3&gt;
+&lt;p&gt;I&#39;m going to assume some degree of familiarity with Node.js&lt;/p&gt;
+&lt;pre class=&#34;language-powershell&#34;&gt;&lt;code class=&#34;language-powershell&#34;&gt;npm install &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;D @11ty/eleventy&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&#39;s start with&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;index.md:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;language-md&#34;&gt;&lt;code class=&#34;language-md&#34;&gt;This is a file&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Adding Syntax Highlighting with Prism.js&lt;/h3&gt;
+&lt;p&gt;As a developer it is
+Eleventy provides an official plugin&lt;/p&gt;
+&lt;h3&gt;Adding Tailwind Style and Typography&lt;/h3&gt;
+&lt;pre class=&#34;language-powershell&#34;&gt;&lt;code class=&#34;language-powershell&#34;&gt;npm install &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;D tailwindcss @tailwindcss/typography&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-powershell&#34;&gt;&lt;code class=&#34;language-powershell&#34;&gt;npx tailwindcss init&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;tailwind.config.js:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;language-js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/** @type {import(&#39;tailwindcss&#39;).Config} */&lt;/span&gt;&lt;br&gt;module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;exports &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token comment&#34;&gt;// This regular expression targets &lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token literal-property property&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/_site/**/*.{html,js}&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token literal-property property&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token literal-property property&#34;&gt;plugins&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;@tailwindcss/typography&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;package.json:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;language-json&#34;&gt;&lt;code class=&#34;language-json&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;script&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;build&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;eleventy &amp;amp;&amp;amp; tailwindcss -i _site/style.css -o _site/style.css&#34;&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;eleventy.js:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;language-js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;exports&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;eleventyConfig&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;  eleventyConfig&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addPassthroughCopy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./**/*.css&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 
     &lt;/article&gt;"></iframe>
-            </div>
-          </a>
-        
-          <a href="/posts/2023-01-17/hello-world/" class="flex flex-col grid-span-1 rounded bg-pink-300 shadow-2xl p-4 gap-1 hover:bg-pink-200 hover:drop-shadow-2xl">
-            <span class="text-right text-sm font-sans italic">Shawn McGee</span>
-            <span class="text-right text-sm font-sans italic">2023-01-17</span>
-            <span class="text-xl font-mono font-bold">Hello World</span>
+          </div>
+        </a>
+      
+        <a
+          title="Hello World"
+          href="/posts/2023-01-17/hello-world/"
+          class="grow flex flex-col w-11/12 max-w-lg gap-2 rounded bg-pink-300 p-2">
+          <span class="text-right text-sm font-sans italic">Shawn McGee</span>
+          <span class="text-right text-sm font-sans italic">2023-01-17</span>
+          <span class="text-xl font-mono font-bold">Hello World</span>
+          
+          <div class="flex flex-row flex-wrap gap-1">
             
-            <div class="flex flex-row gap-1">
-              
-                <div class="flex flex-row border rounded-full border-pink-900 px-2 place-content-center">
-                  <span class="text-sm font-mono text-pink-900">#11ty</span>
-                </div>
-              
-                <div class="flex flex-row border rounded-full border-pink-900 px-2 place-content-center">
-                  <span class="text-sm font-mono text-pink-900">#Eleventy</span>
-                </div>
-              
-                <div class="flex flex-row border rounded-full border-pink-900 px-2 place-content-center">
-                  <span class="text-sm font-mono text-pink-900">#Tailwind</span>
-                </div>
-              
-                <div class="flex flex-row border rounded-full border-pink-900 px-2 place-content-center">
-                  <span class="text-sm font-mono text-pink-900">#Prism</span>
-                </div>
-              
-            </div>
-            <div class="bg-pink-200 rounded p-2">
-              <iframe
-                scrolling="no"
-                title="Hello World"
-                class="w-full h-48 pointer-events-none"
-                srcdoc="
+              <span class="text-sm font-mono text-pink-900 border border-pink-900 rounded-full px-2">#11ty</span>
+            
+              <span class="text-sm font-mono text-pink-900 border border-pink-900 rounded-full px-2">#Eleventy</span>
+            
+              <span class="text-sm font-mono text-pink-900 border border-pink-900 rounded-full px-2">#Tailwind</span>
+            
+              <span class="text-sm font-mono text-pink-900 border border-pink-900 rounded-full px-2">#Prism</span>
+            
+          </div>
+          <div class="bg-pink-200 rounded p-2">
+            <iframe
+              scrolling="no"
+              title="Hello World"
+              class="w-full h-48 pointer-events-none"
+              srcdoc="
     &lt;head&gt;
-      &lt;link href=&#34;/asset/css/style.css&#34; rel=&#34;stylesheet&#34; /&gt;
+      &lt;link href=&#34;/assets/css/style.css&#34; rel=&#34;stylesheet&#34; /&gt;
       &lt;script src=&#34;https://unpkg.com/phosphor-icons&#34;&gt;&lt;/script&gt;
       &lt;title&gt;{{ title }}&lt;/title&gt;
     &lt;/head&gt;
@@ -148,20 +167,10 @@ consumed by &lt;a href=&#34;https://11ty.dev&#34;&gt;eleventy.js&lt;/a&gt; to ge
 &lt;pre class=&#34;language-java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;HelloWorld&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Hello World!&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 
     &lt;/article&gt;"></iframe>
-            </div>
-          </a>
-        
-      </div>
-      <div class="h-12"></div>
-      <div class="flex flex-row place-content-center">
-        <a
-          href="/posts/"
-          title="See More"
-          class="rounded-full flex flex-row place-content-center place-items-center bg-pink-900 hover:drop-shadow-2xl">
-          <i class=" ph-dots-three text-6xl text-center font-mono font-bold text-white"></i>
+          </div>
         </a>
-      </div>
-      <div class="h-12"></div>
+      
     </div>
+
   </body>
 </html>
