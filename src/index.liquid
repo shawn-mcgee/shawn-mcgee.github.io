@@ -58,9 +58,11 @@
         <a
           title="{{ post.data.title }}"
           href="{{ post.url }}"
-          class="grow flex flex-col w-11/12 max-w-lg gap-2 rounded bg-pink-300 p-2">
-          <span class="text-right text-sm font-sans italic">{{ post.data.author }}</span>
-          <span class="text-right text-sm font-sans italic">{{ post.data.date }}</span>
+          class="grow flex flex-col gap-1 w-11/12 max-w-lg rounded bg-pink-300 p-2">
+          <div class="flex flex-col">
+            <span class="text-right text-sm font-sans italic">{{ post.data.author }}</span>
+            <span class="text-right text-sm font-sans italic">{{ post.data.date }}</span>
+          </div>
           <span class="text-xl font-mono font-bold">{{ post.data.title }}</span>
           {% assign tags = post.data.tags | slice: 1, 5 %}
           <div class="flex flex-row flex-wrap gap-1">
