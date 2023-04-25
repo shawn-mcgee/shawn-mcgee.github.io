@@ -13,7 +13,7 @@
     <div class="container mx-auto grid grid-flow-row justify-center">
       <span class="text-3xl font-mono font-bold text-white">Posts:</span>
       {% assign posts = collections.posts | reverse %}
-      <div class="grid grid-flow-col grid-cols-3 justify-center gap-2">
+      <div class="grid grid-flow-col grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center gap-2">
         {% for post in posts %}
           <a href="{{post.url}}" class="flex flex-col grid-span-1 rounded bg-pink-300 shadow-2xl p-4 gap-1 hover:bg-pink-200 hover:drop-shadow-2xl">
             <span class="text-right text-sm font-sans italic">{{ post.data.author }}</span>
