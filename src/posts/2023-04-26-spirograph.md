@@ -2,7 +2,7 @@
 title: "Spirograph"
 author: Shawn McGee
 date: "2023-04-26"
-tags: [ Demo, Audio, Visualizer, Vanilla, TypeScript ]
+tags: [ Demo, Spirograph, Svelte, TypeScript, Tailwind ]
 layout: post
 ---
 
