@@ -1,6 +1,6 @@
 "use client"
 
-import Background from "@/components/background";
+import Background from "@/components/p5/bg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

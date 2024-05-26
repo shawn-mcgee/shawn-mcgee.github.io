@@ -1,5 +1,5 @@
 import fs from "fs";
-import Content from "@/components/content";
+import Content from "@/components/mdx/content";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   return <Content params={{ ...params }} />

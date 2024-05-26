@@ -1,7 +1,7 @@
 "use client"
 
 import type p5 from "p5";
-import Sketch from "./p5/Sketch";
+import Sketch from "./sketch";
 
 export default function Background() {
   return <Sketch sketch={_sketch} className="fixed -z-10 w-dvw h-dvh overflow-hidden"/>
