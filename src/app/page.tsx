@@ -26,7 +26,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild className="flex-grow basis-1 text-2xl" variant={"secondary"}>
-                <Link href={"https://itch.io/profile/tinycthulu"} target={"_blank"}>
+                <Link href={"https://itch.io/profile/shawn-mcgee"} target={"_blank"}>
                   Itch.io
                   <img src="/itchio-white.svg" className="p-1 w-0 h-0 dark:w-8 dark:h-8"/>
                   <img src="/itchio-black.svg" className="p-1 w-8 h-8 dark:w-0 dark:h-0"/>
@@ -38,12 +38,8 @@ export default function Home() {
         </div>
         <a id="posts"/>
         <div className="flex flex-col">
-          <span>This is a post</span>
-          <span>This is a post</span>
-          <span>This is a post</span>
-          <span>This is a post</span>
-          <span>This is a post</span>
-          <span>This is a post</span>
+          {/* Link to recent posts here! */}
+          {/* Link to all    posts here! */}
         </div>
       </div>
     </div>
