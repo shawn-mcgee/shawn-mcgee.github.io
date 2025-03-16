@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes:garden --default, coffee --prefersdark;
+  exclude: rootscrollgutter;
+}
+
+@custom-variant dark (&:where([data-theme=coffee], [data-theme=coffee] *));

@@ -1,11 +1,19 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Drawer from '../layouts/Drawer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this filetro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Drawer>
+    <div class="flex flex-col w-full h-full justify-center items-center gap-1">
+      <img class="w-32 h-32" src="/pfp.png">
+      <span class="text-6xl font-bold font-mono">Shawn McGee</span>
+      <span class="text-2xl italic">"Full-Time Dad, Part-Time DM, Some-Time Programmer"</span>
+    </div>
+  </Drawer>	
 </Layout>
