@@ -1,0 +1,12 @@
+---
+export type Props = {
+  tag: string
+}
+
+const { tag } = Astro.props
+---
+<a href={`/idea/tag/#${tag}/`} class="">
+  <span class="btn btn-ghost rounded-full text-lg text-primary">
+    #{tag}
+  </span>
+</a>

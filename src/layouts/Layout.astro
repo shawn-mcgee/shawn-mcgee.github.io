@@ -3,7 +3,7 @@ import "/src/styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 	<head>
     <script is:inline>
       if (localStorage.getItem("theme") === null) {
@@ -24,10 +24,13 @@ import "/src/styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Shawn McGee</title>
 
+    <!-- sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- rss -->
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Shawn McGee"
+      title="Shawn McGee's Blog"
       href={new URL("rss.xml", Astro.site)}
     />
 	</head>

@@ -3,10 +3,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Drawer from "@layouts/Drawer.astro";
 
-import Tags from "@components/article/Tags.astro";
-import Title from "@components/article/Title.astro";
-import Author from "@components/article/Author.astro";
-import Date from "@components/article/Date.astro";
+import Tags from "@components/Tags.astro";
 
 export async function getStaticPaths() {
   const ideas = await getCollection("ideas");
@@ -30,10 +27,11 @@ const { Content } = await render(idea);
     <div class="flex flex-col w-full items-center">
       <div class="flex flex-col w-[960px] min-h-dvh items-center">
         <div class="flex flex-col w-full items-center p-4">
-          <Title title={idea.data.title}/>
-          <div class="flex flex-row w-full justify-center text-xl gap-2">
-            <Author author={idea.data.author}/>|
-            <Date pubDate={idea.data.pubDate}/>
+          <span class="text-4xl font-bold text-center">{idea.data.title}</span>
+          <div class="flex flex-row w-full justify-center gap-2 text-xl">
+            <span>{idea.data.author                 }</span>
+            { (idea.data.author && idea.data.pubDate) ? "|" : "" }
+            <span>{idea.data.pubDate?.toDateString()}</span>
           </div>
           <Tags tags={idea.data.tags}/>
         </div>

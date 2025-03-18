@@ -1,13 +1,24 @@
 ---
-import { CircleHelp, LibraryBig } from "lucide-astro";
 import Github from "@icons/Github.astro";
 import Itchio from "@icons/Itchio.astro";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
+import { CircleHelp, Ellipsis, LibraryBig, Lightbulb } from "lucide-astro";
 
-import { getCollection } from "astro:content"
+import Tags from "@components/Tags.astro";
+import { getCollection } from "astro:content";
 
-const ideas = (await getCollection("ideas")).slice(0, 3)
+function slug(idea: any) {
+  let slug = idea.filePath
+  slug = slug?.replace(/^idea\//, "");
+  slug = slug?.replace(/\.mdx?$/, "");
+  return slug;
+}
+
+const ideas = (await getCollection("ideas"))
+  .filter(idea => idea.data.pubDate)
+  .sort((a, b) => a.data.pubDate! !== b.data.pubDate! ? (a.data.pubDate! > b.data.pubDate!) ? -1 : 1 : 0)
+  .slice(0, 3)
 ---
 
 <Layout>
@@ -44,8 +55,32 @@ const ideas = (await getCollection("ideas")).slice(0, 3)
           
         </div>
       </div>
-      <a id="blog"></a>
-      {ideas.map(idea => <div>{idea.data.title}</div>)}
+      <a id="blog"></a>      
+      <div class="flex flex-col w-full min-h-dvh justify-center items-center">
+        <span class="text-6xl font-bold p-8">
+          Recent Ideas
+        </span>
+        {ideas.map(idea => (
+          <a href={`/idea/${slug(idea)}`} class="w-md flex flex-row items-center p-4 rounded-lg hover:bg-base-200">
+            <Lightbulb class="w-10 h-10"/>
+            <div class="divider divider-horizontal"></div>
+            <div class="flex flex-col flex-1 items-start">
+              <span class="text-xl font-bold">{idea.data.title }</span>
+              <div class="flex flex-row gap-1 text-lg">
+                <span>{idea.data.author                 }</span>
+                { (idea.data.author && idea.data.pubDate) ? "|" : "" }
+                <span>{idea.data.pubDate?.toDateString()}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+
+        <span class="tooltip tooltip-bottom" data-tip="More Ideas">
+          <a href="/idea" class="btn btn-xl btn-ghost btn-circle">
+            <Ellipsis class="w-10 h-10"/>
+          </a>
+        </span>
+      </div>      
     </div>
   </Drawer>	
 </Layout>

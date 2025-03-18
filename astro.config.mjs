@@ -8,6 +8,8 @@ import react from '@astrojs/react';
 import expressiveCode from 'astro-expressive-code';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://shawn-mcgee.github.io",
@@ -30,5 +32,5 @@ export default defineConfig({
     defaultProps: {
       showLineNumbers: false
     }
-  }), react(), mdx()],
+  }), react(), mdx(), sitemap()],
 });
