@@ -1,21 +1,23 @@
 ---
-import { BookMarked, CircleHelp, Github, House, Link, Moon, Store, Sun } from 'lucide-astro';
+import { Bookmark, BookMarked, CircleHelp, House, LibraryBig, Moon, Sun } from 'lucide-astro';
+import Github from "../components/icons/github.astro";
+import Itchio from '../components/icons/itchio.astro';
 
 ---
 
 <div class="drawer w-dvw min-h-dvh">
   <input id="my-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
-    <!-- Page content here -->     
+    <!-- Page content here -->
     <slot />
 
-    <label for="my-drawer" class="drawer-button btn btn-ghost btn-circle w-16 h-16 absolute top-4 left-4">
+    <label for="my-drawer" class="btn btn-xl btn-ghost btn-circle absolute top-4 left-4">
       <BookMarked class="w-10 h-10"/>
     </label>
 
-    <label class="swap swap-rotate btn btn-ghost btn-circle w-16 h-16 absolute top-4 right-4">
+    <label class="swap swap-rotate btn btn-xl btn-ghost btn-circle absolute top-4 right-4">
       <!-- this hidden checkbox controls the state -->
-      <input type="checkbox" data-toggle-theme="garden,coffee" data-act-class="ACTIVECLASS"/>
+      <input type="checkbox" data-toggle-theme="valentine,dracula" data-act-class="ACTIVECLASS"/>
       <Sun  class="swap-off w-10 h-10" />
       <Moon class="swap-on  w-10 h-10" />
     </label>
@@ -25,11 +27,13 @@ import { BookMarked, CircleHelp, Github, House, Link, Moon, Store, Sun } from 'l
     <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
 
-      <span class="text-3xl font-bold font-mono">
-        /goto
-      </span>
+
 
       <!-- Sidebar content here -->
+
+      <span class="p-1 text-3xl font-bold font-[Fragment_Mono] dark:text-primary">
+        /goto
+      </span>
 
       <!-- Home -->
       <li><a class="flex flex-row gap-1 text-2xl" href="/">
@@ -40,7 +44,7 @@ import { BookMarked, CircleHelp, Github, House, Link, Moon, Store, Sun } from 'l
       <!-- Blog -->
       <li><a class="flex flex-row gap-1 text-2xl" href="/blog">
         <span class="flex-1">Blog</span>
-        <BookMarked/>
+        <LibraryBig/>
       </a></li>
 
       <!-- GitHub -->
@@ -52,7 +56,7 @@ import { BookMarked, CircleHelp, Github, House, Link, Moon, Store, Sun } from 'l
       <!-- Itch -->
       <li><a class="flex flex-row gap-1 text-2xl" href="https://shawn-mcgee.itch.io" target="_blank">
         <span class="flex-1">Itch</span>
-        <Store/>
+        <Itchio/>
       </a></li>
 
       <!-- About -->

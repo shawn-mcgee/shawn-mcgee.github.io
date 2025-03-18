@@ -1,19 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { CircleHelp, LibraryBig } from 'lucide-astro';
+import Github from "../components/icons/github.astro";
+import Itchio from '../components/icons/itchio.astro';
 import Drawer from '../layouts/Drawer.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this filetro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
   <Drawer>
     <div class="flex flex-col w-full h-full justify-center items-center gap-1">
-      <img class="w-32 h-32" src="/pfp.png">
-      <span class="text-6xl font-bold font-mono">Shawn McGee</span>
-      <span class="text-2xl italic">"Full-Time Dad, Part-Time DM, Some-Time Programmer"</span>
+      <!-- <img  class="w-32 h-32 rounded-full border-4 border-primary" src="/pfp.png"> -->
+      <span class="text-6xl font-bold text-center sm:text-8xl dark:text-primary">Shawn McGee</span>
+      <span class="text-xl italic text-center hidden sm:inline">Full-Time Dad, Part-Time DM, Some-Time Programmer</span>
+      <div class="flex flex-row gap-1">
+        <span class="tooltip tooltip-bottom" data-tip="Blog">
+          <a class="btn btn-xl btn-ghost btn-circle" href="/blog" target="_blank">
+            <LibraryBig class="w-10 h-10"/>
+          </a>
+        </span>
+
+        <span class="tooltip tooltip-bottom" data-tip="GitHub">
+          <a class="btn btn-xl btn-ghost btn-circle" href="https://github.com/shawn-mcgee" target="_blank">
+            <Github class="w-10 h-10"/>
+          </a>
+        </span>
+
+        <span class="tooltip tooltip-bottom" data-tip="Itch">
+          <a class="btn btn-xl btn-ghost btn-circle" href="https://shawn-mcgee.itch.io" target="_blank">
+            <Itchio class="w-10 h-10"/>
+          </a>
+        </span>
+
+        <span class="tooltip tooltip-bottom" data-tip="About">
+          <a class="btn btn-xl btn-ghost btn-circle" href="/about" target="_blank">
+            <CircleHelp class="w-10 h-10"/>
+          </a>
+        </span>
+        
+      </div>
     </div>
   </Drawer>	
 </Layout>
