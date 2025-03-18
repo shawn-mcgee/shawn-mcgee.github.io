@@ -8,7 +8,6 @@ import Tags from "@components/idea/Tags.astro";
 import Title from "@components/idea/Title.astro";
 import Author from "@components/idea/Author.astro";
 
-
 export async function getStaticPaths() {
   const ideas = await getCollection("ideas");
   return ideas.map(idea => {
