@@ -1,0 +1,11 @@
+---
+export type Props = {
+  author: string | undefined
+}
+
+const { author } = Astro.props
+---
+
+<div class="flex flex-row justify-center">
+  <span class="text-xl text-center">{author}</span>
+</div>

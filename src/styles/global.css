@@ -3,6 +3,7 @@
 /* figtree */
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fragment+Mono:ital@0;1&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: valentine --default, dracula --prefersdark;
   exclude: rootscrollgutter;

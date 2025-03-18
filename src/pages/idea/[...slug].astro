@@ -1,7 +1,12 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import Drawer from "../../layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+import Drawer from "@layouts/Drawer.astro";
+import Article from "@layouts/Article.astro";
+
+import Tags from "@components/idea/Tags.astro";
+import Title from "@components/idea/Title.astro";
+import Author from "@components/idea/Author.astro";
 
 
 export async function getStaticPaths() {
@@ -23,9 +28,11 @@ const { Content } = await render(idea);
 
 <Layout>
   <Drawer>
-    <div class="flex flex-col w-[960px] items-center self-center">
-      <h1>{idea.data.title}</h1>
+    <Article>
+      <Author author={idea.data.author}/>
+      <Title title={idea.data.title}/>      
+      <Tags tags={idea.data.tags}/>
       <Content/>
-    </div>
+    </Article>
   </Drawer>
 </Layout>

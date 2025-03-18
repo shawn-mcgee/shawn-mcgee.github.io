@@ -1,43 +1,53 @@
 ---
-import { CircleHelp, LibraryBig } from 'lucide-astro';
-import Github from "../components/icons/github.astro";
-import Itchio from '../components/icons/itchio.astro';
-import Drawer from '../layouts/Drawer.astro';
-import Layout from '../layouts/Layout.astro';
+import { CircleHelp, LibraryBig } from "lucide-astro";
+import Github from "@icons/github.astro";
+import Itchio from "@icons/itchio.astro";
+import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+
+import { getCollection } from "astro:content"
+
+const ideas = (await getCollection("ideas")).slice(0, 3)
 ---
 
 <Layout>
   <Drawer>
-    <div class="flex flex-col w-full h-full justify-center items-center gap-1">
-      <!-- <img  class="w-32 h-32 rounded-full border-4 border-primary" src="/pfp.png"> -->
-      <span class="text-6xl font-bold text-center sm:text-8xl dark:text-primary">Shawn McGee</span>
-      <span class="text-xl italic text-center hidden sm:inline">Full-Time Dad, Part-Time DM, Some-Time Programmer</span>
-      <div class="flex flex-row gap-1">
-        <span class="tooltip tooltip-bottom" data-tip="Blog">
-          <a class="btn btn-xl btn-ghost btn-circle" href="/blog" target="_blank">
-            <LibraryBig class="w-10 h-10"/>
-          </a>
-        </span>
-
-        <span class="tooltip tooltip-bottom" data-tip="GitHub">
-          <a class="btn btn-xl btn-ghost btn-circle" href="https://github.com/shawn-mcgee" target="_blank">
-            <Github class="w-10 h-10"/>
-          </a>
-        </span>
-
-        <span class="tooltip tooltip-bottom" data-tip="Itch">
-          <a class="btn btn-xl btn-ghost btn-circle" href="https://shawn-mcgee.itch.io" target="_blank">
-            <Itchio class="w-10 h-10"/>
-          </a>
-        </span>
-
-        <span class="tooltip tooltip-bottom" data-tip="About">
-          <a class="btn btn-xl btn-ghost btn-circle" href="/about" target="_blank">
-            <CircleHelp class="w-10 h-10"/>
-          </a>
-        </span>
-        
+    <div class="flex flex-col w-full justify-center items-center gap-1">
+      <div class="flex flex-col w-full h-dvh justify-center items-center gap-1">
+        <!-- <img  class="w-32 h-32 rounded-full border-4 border-primary" src="/pfp.png"> -->
+        <span class="text-6xl font-bold text-center sm:text-8xl dark:text-primary">Shawn McGee</span>
+        <span class="text-xl italic text-center hidden sm:inline">Full-Time Dad, Part-Time DM, Some-Time Programmer</span>
+        <div class="flex flex-row gap-1">
+          <span class="tooltip tooltip-bottom" data-tip="Blog">
+            <a class="btn btn-xl btn-ghost btn-circle" href="#blog">
+              <LibraryBig class="w-10 h-10"/>
+            </a>
+          </span>
+  
+          <span class="tooltip tooltip-bottom" data-tip="GitHub">
+            <a class="btn btn-xl btn-ghost btn-circle" href="https://github.com/shawn-mcgee" target="_blank">
+              <Github class="w-10 h-10"/>
+            </a>
+          </span>
+  
+          <span class="tooltip tooltip-bottom" data-tip="Itch">
+            <a class="btn btn-xl btn-ghost btn-circle" href="https://shawn-mcgee.itch.io" target="_blank">
+              <Itchio class="w-10 h-10"/>
+            </a>
+          </span>
+  
+          <span class="tooltip tooltip-bottom" data-tip="About">
+            <a class="btn btn-xl btn-ghost btn-circle" href="/about" target="_blank">
+              <CircleHelp class="w-10 h-10"/>
+            </a>
+          </span>
+          
+        </div>
       </div>
+      <a id="blog"></a>
+      {ideas.map(idea => {
+        return idea.data.title
+      })}
     </div>
   </Drawer>	
 </Layout>

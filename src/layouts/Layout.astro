@@ -3,7 +3,7 @@ import "/src/styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
     <script is:inline>
       if (localStorage.getItem("theme") === null) {
@@ -19,20 +19,18 @@ import "/src/styles/global.css";
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Shawn McGee</title>
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Shawn McGee"
+      href={new URL("rss.xml", Astro.site)}
+    />
 	</head>
-	<body class="font-[Figtree]">
+	<body class="font-[Figtree] w-dvw h-dvh overflow-hidden">
     <slot/>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

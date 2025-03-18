@@ -1,13 +1,13 @@
 ---
 import { Bookmark, BookMarked, CircleHelp, House, LibraryBig, Moon, Sun } from 'lucide-astro';
-import Github from "../components/icons/github.astro";
-import Itchio from '../components/icons/itchio.astro';
+import Github from "@icons/Github.astro";
+import Itchio from "@icons/Itchio.astro";
 
 ---
 
-<div class="drawer w-dvw min-h-dvh">
+<div class="drawer w-full h-full">
   <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
+  <div class="drawer-content w-full h-full overflow-y-auto">
     <!-- Page content here -->
     <slot />
 
