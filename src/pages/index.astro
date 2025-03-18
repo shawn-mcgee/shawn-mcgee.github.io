@@ -45,9 +45,7 @@ const ideas = (await getCollection("ideas")).slice(0, 3)
         </div>
       </div>
       <a id="blog"></a>
-      {ideas.map(idea => {
-        return idea.data.title
-      })}
+      {ideas.map(idea => <div>{idea.data.title}</div>)}
     </div>
   </Drawer>	
 </Layout>

@@ -13,9 +13,9 @@ export async function GET(context) {
 
   return rss({
     // `<title>` field in output xml
-    title: "Shawn McGee",
+    title: "Shawn McGee's Blog",
     // `<description>` field in output xml
-    description: "A humble Astronaut’s guide to the stars",
+    description: "Full-Time Dad, Part-Time DM, Some-Time Programmer",
     // Pull in your project "site" from the endpoint context
     // https://docs.astro.build/en/reference/api-reference/#site
     site: context.site,
