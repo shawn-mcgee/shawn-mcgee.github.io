@@ -4,23 +4,42 @@ import Layout from "@layouts/Layout.astro";
 import Drawer from "@layouts/Drawer.astro";
 
 import Tags from "@components/Tags.astro";
+import { ArrowLeft, ArrowRight } from "lucide-astro";
+
+function slugOf(idea: any) {
+  let slug = idea.filePath
+  slug = slug?.replace(/^idea\//, "");
+  slug = slug?.replace(/\.mdx?$/, "");
+  return slug;
+}
 
 export async function getStaticPaths() {
-  const ideas = await getCollection("ideas");
+  const ideas = (await getCollection("ideas"))
+    .filter(idea => idea.data.pubDate)
+    .sort((a, b) => a.data.pubDate!.valueOf() - b.data.pubDate!.valueOf())  
   
   return ideas.map(idea => {
-    let slug = idea.filePath
-    slug = slug?.replace(/^idea\//, "");
-    slug = slug?.replace(/\.mdx?$/, "");
+    function slugOf(idea: any) {
+      let slug = idea.filePath
+      slug = slug?.replace(/^idea\//, "");
+      slug = slug?.replace(/\.mdx?$/, "");
+      return slug;
+    }
+
+    const i = ideas.findIndex(each => slugOf(each) === slugOf(idea))
+    const prev = i >                0 ? ideas[i - 1] : undefined
+    const next = i < ideas.length - 1 ? ideas[i + 1] : undefined
+    const slug = slugOf(idea)
+
     return {
-      params: { slug },
-      props : { idea },
+      params: { slug             },
+      props : { idea, prev, next },
     }
   });
 }
 
-const { idea    } = Astro.props;
-const { Content } = await render(idea);
+const { idea, prev, next } = Astro.props;
+const { Content }  =  await render(idea);
 ---
 
 <Layout>
@@ -52,6 +71,41 @@ const { Content } = await render(idea);
       <div class="flex flex-col w-full flex-1 sm:max-w-2xl sm:shadow-lg prose prose-sm sm:prose-lg break-words sm:break-normal p-8">
         <Content/>
       </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="flex flex-col w-full items-center">
+      <!-- Spacing -->
+      <div class="h-4"></div>
+
+      <div class="flex flex-row w-3xs sm:w-2xl justify-center gap-2">
+        { prev && (
+          <a href={`/idea/${slugOf(prev)}`} class="flex flex-row flex-1 items-center rounded-lg hover:bg-base-200">
+            <ArrowLeft class="w-10 h-10"/>
+            <div class="divider divider-horizontal"></div>
+            <div class="flex flex-col flex-1 items-start">
+              <span class="text-lg sm:text-xl font-bold">
+                { prev.data.title }
+              </span>
+            </div>
+          </a>
+        )}
+  
+        { next && (
+          <a href={`/idea/${slugOf(next)}`} class="flex flex-row flex-1 items-center rounded-lg hover:bg-base-200">
+            <div class="flex flex-col flex-1 items-end">
+              <span class="text-lg sm:text-xl font-bold">
+                { next.data.title }
+              </span>
+            </div>
+            <div class="divider divider-horizontal"></div>
+            <ArrowRight class="w-10 h-10"/> 
+          </a>
+        )}
+      </div>
+
+      <!-- Spacing -->
+      <div class="h-4"></div>
     </div>
   </Drawer>
 </Layout>

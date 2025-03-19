@@ -17,7 +17,7 @@ function slug(idea: any) {
 
 const ideas = (await getCollection("ideas"))
   .filter(idea => idea.data.pubDate)
-  .sort((a, b) => a.data.pubDate! !== b.data.pubDate! ? (a.data.pubDate! > b.data.pubDate!) ? -1 : 1 : 0)
+  .sort((a, b) => a.data.pubDate!.valueOf() - b.data.pubDate!.valueOf())
   .slice(0, 3)
 ---
 
@@ -70,7 +70,7 @@ const ideas = (await getCollection("ideas"))
               <span class="text-lg sm:text-xl font-bold">{idea.data.title }</span>
               <div class="text-sm sm:text-lg flex flex-row gap-1 ">
                 <span>{idea.data.author                 }</span>
-                { (idea.data.author && idea.data.pubDate) ? "|" : "" }
+                { idea.data.author && "|" }
                 <span>{idea.data.pubDate?.toDateString()}</span>
               </div>
             </div>

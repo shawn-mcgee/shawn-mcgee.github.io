@@ -5,7 +5,7 @@ import { glob } from "astro/loaders"
 const ideas = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./idea" }),
   schema: rssSchema.extend({
-    tags: z.array(z.string()).optional()
+    tags : z.array(z.string()).optional()
   })
 });
 
