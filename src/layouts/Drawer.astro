@@ -10,8 +10,8 @@ import { BookMarked, CircleHelp, House, LibraryBig, Moon, Sun } from 'lucide-ast
     <!-- Page content here -->
     <slot />
 
-    <label for="my-drawer" class="btn btn-xl btn-ghost btn-circle absolute top-4 left-4">
-      <BookMarked class="w-10 h-10"/>
+    <label for="my-drawer" class="btn btn-xl btn-ghost btn-circle absolute top-4 left-4 sm:btn-xl">
+      <BookMarked class="w-10 h-10" />
     </label>
 
     <button class="btn btn-xl btn-ghost btn-circle absolute top-4 right-4" data-toggle-theme="valentine,dracula" data-act-class="ACTIVECLASS">
@@ -27,7 +27,7 @@ import { BookMarked, CircleHelp, House, LibraryBig, Moon, Sun } from 'lucide-ast
     <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
       <!-- Sidebar content here -->
 
-      <span class="p-1 text-3xl font-bold font-[Fragment_Mono] dark:text-primary">
+      <span class="p-1 text-2xl font-bold font-[Fragment_Mono] dark:text-primary">
         /goto
       </span>
 
@@ -38,7 +38,7 @@ import { BookMarked, CircleHelp, House, LibraryBig, Moon, Sun } from 'lucide-ast
       </a></li>
 
       <!-- Blog -->
-      <li><a class="flex flex-row gap-1 text-2xl" href="/blog">
+      <li><a class="flex flex-row gap-1 text-2xl" href="/idea">
         <span class="flex-1">Blog</span>
         <LibraryBig/>
       </a></li>

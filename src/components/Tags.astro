@@ -3,11 +3,12 @@ import Tag from "@components/Tag.astro"
 
 export type Props = {
   tags: Array<string> | undefined
+  class: string
 }
 
-const { tags } = Astro.props
+const { tags, class: className } = Astro.props
 ---
 
-<div class="flex flex-row justify-center">
+<div class:list={[className, "flex flex-row w-full justify-center gap-1"]}>
   {tags?.map(tag => <Tag {tag}/>)}
 </div>
