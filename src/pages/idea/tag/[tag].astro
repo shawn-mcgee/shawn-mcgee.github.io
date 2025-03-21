@@ -1,0 +1,48 @@
+---
+import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+import { Idea } from "@tool/idea";
+import { getCollection } from "astro:content";
+import { Construction, Lightbulb } from "lucide-astro";
+
+export async function getStaticPaths() {
+  return (await getCollection("ideas")).reduce((tags, idea) => {
+    idea.data.tags?.forEach(tag => {
+      if(!tags.includes(tag)) tags.push(tag)
+    })
+    return tags
+  }, new Array<string>).map(tag => ({
+    params: { tag }
+  }))
+}
+
+const { tag } = Astro.params
+
+const ideas = (await getCollection("ideas"))
+  .filter(idea => idea.data.tags?.includes(tag))
+---
+
+<Layout>
+  <Drawer>
+    <div class="flex flex-col w-full items-center">
+      <div class="h-4"></div>
+      <span class="text-6xl font-bold border-2 rounded-full px-4 py-2"># {tag}</span>
+      <div class="h-4"></div>
+      { ideas.map(idea => (
+        <a href={`/idea/${Idea.slug(idea)}`} class="flex flex-row items-center p-4 rounded-lg hover:bg-base-200">
+          { !Idea.isDraft(idea) && <Lightbulb    class="w-10 h-10"/> }
+          {  Idea.isDraft(idea) && <Construction class="w-10 h-10"/> }
+          <div class="divider divider-horizontal"></div>
+          <div class="flex flex-col flex-1 items-start">
+            <span class="text-lg lg:text-xl font-bold">{idea.data.title }</span>
+            <div class="text-sm lg:text-lg flex flex-row gap-1 ">
+              { idea.data.author && <span>{idea.data.author}</span>}
+              { (idea.data.author && idea.data.pubDate) && "|" }
+              { idea.data.pubDate && <span>{idea.data.pubDate?.toDateString()}</span>}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Drawer>
+</Layout>
