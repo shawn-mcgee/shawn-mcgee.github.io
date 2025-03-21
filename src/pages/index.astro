@@ -9,6 +9,7 @@ import { CircleHelp, Ellipsis, LibraryBig, Lightbulb } from "lucide-astro";
 import { Idea } from "@tool/idea";
 
 const ideas = (await getCollection("ideas"))
+  .filter(idea => idea.data.pubDate)
   .sort((a, b) => (
     b.data.pubDate!.valueOf() - 
     a.data.pubDate!.valueOf()

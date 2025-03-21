@@ -5,4 +5,8 @@ export namespace Idea {
     slug = slug?.replace(/\.mdx?$/, "");
     return slug;
   }
+
+  export function isDraft(idea: any) {
+    return !idea.data.pubDate
+  }
 }

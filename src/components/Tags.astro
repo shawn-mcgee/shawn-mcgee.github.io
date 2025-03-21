@@ -9,6 +9,6 @@ export type Props = {
 const { tags, class: className } = Astro.props
 ---
 
-<div class:list={[className, "flex flex-row w-full justify-center gap-1"]}>
+<div class:list={[className, "flex flex-row w-full justify-center gap-1 p-1"]}>
   {tags?.map(tag => <Tag {tag}/>)}
 </div>

@@ -5,14 +5,14 @@ import Drawer from "@layouts/Drawer.astro";
 import { Idea } from "@tool/idea";
 
 import Tags from "@components/Tags.astro";
-import { ArrowLeft, ArrowRight, Ellipsis } from "lucide-astro";
+import { ArrowLeft, ArrowRight, Construction, Ellipsis } from "lucide-astro";
 
 export async function getStaticPaths() {
   const ideas = (await getCollection("ideas"))
-    .filter(idea => idea.data.pubDate)
+    // .filter(idea => idea.data.pubDate)
     .sort  ((a, b) => (
-      a.data.pubDate!.valueOf() - 
-      b.data.pubDate!.valueOf()
+      (a.data.pubDate?.valueOf() ?? 0) - 
+      (b.data.pubDate?.valueOf() ?? 0)
     ))
 
   return ideas.map(idea => {
@@ -33,12 +33,24 @@ const { idea, prevIdea, nextIdea } =         Astro.props;
 const { Content                  } =  await render(idea);
 ---
 
+<style>
+  .caution {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--color-base-100),
+      var(--color-base-100) 20px,
+      var(--color-base-200) 20px,
+      var(--color-base-200) 40px
+    );
+  }
+</style>
+
 <Layout>
   <Drawer>
     <!-- Container -->
     <div class="flex flex-col w-full min-h-dvh items-center">
       <!-- Spacing -->
-      <div class="h-4"></div>
+      <div class="h-6"></div>
 
       <!-- Header -->
       <div class="flex flex-col w-3xs items-center sm:w-lg">
@@ -58,9 +70,27 @@ const { Content                  } =  await render(idea);
         <Tags tags={idea.data.tags} class="text-sm sm:text-lg"/>
       </div>
 
+
+
       <!-- Article -->
-      <div class="flex flex-col w-full flex-1 sm:max-w-2xl sm:shadow-lg prose prose-sm sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
-        <Content/>
+      <div class="flex flex-col w-full flex-1 sm:max-w-2xl sm:shadow-lg">
+        { Idea.isDraft(idea) && (
+          <div class="flex flex-row items-center caution px-4 py-2 rounded-t-lg">
+            <Construction class="w-10 h-10 shrink-0"/>
+            <div class="divider divider-horizontal"></div>
+            <div class="flex flex-col flex-1">
+              <span class="text-xl font-bold">This Idea is Under Construction</span>
+              <span class="italic">
+                This article is a working draft.
+                Some or all of its content may be unfinished,
+                may be altered,
+                or may even be deleted at a future time.</span>
+            </div>
+          </div>
+        )}
+        <div class="prose prose-sm sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
+          <Content/>
+        </div>
       </div>
     </div>
 
