@@ -21,12 +21,14 @@ export async function GET(context) {
     site: context.site,
     // Array of `<item>`s in output xml
     // See "Generating items" section for examples using content collections and glob imports
-    items: ideas.map(idea => ({
-      title      : idea.data.title,
-      pubDate    : idea.data.pubDate,
-      description: idea.data.description,
-      link: `/idea/${slug(idea)}`,
-    })),
+    items: ideas
+      .filter(idea => idea.data.pubDate)
+      .map(idea => ({
+        title      : idea.data.title,
+        pubDate    : idea.data.pubDate,
+        description: idea.data.description,
+        link: `/idea/${slug(idea)}`,
+      })),
 
     trailingSlash: false,
     // (optional) inject custom xml
