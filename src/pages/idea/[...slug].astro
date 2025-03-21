@@ -2,44 +2,35 @@
 import { getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Drawer from "@layouts/Drawer.astro";
+import { Idea } from "@tool/idea";
 
 import Tags from "@components/Tags.astro";
-import { ArrowLeft, ArrowRight } from "lucide-astro";
-
-function slugOf(idea: any) {
-  let slug = idea.filePath
-  slug = slug?.replace(/^idea\//, "");
-  slug = slug?.replace(/\.mdx?$/, "");
-  return slug;
-}
+import { ArrowLeft, ArrowRight, Ellipsis } from "lucide-astro";
 
 export async function getStaticPaths() {
   const ideas = (await getCollection("ideas"))
     .filter(idea => idea.data.pubDate)
-    .sort((a, b) => a.data.pubDate!.valueOf() - b.data.pubDate!.valueOf())  
-  
-  return ideas.map(idea => {
-    function slugOf(idea: any) {
-      let slug = idea.filePath
-      slug = slug?.replace(/^idea\//, "");
-      slug = slug?.replace(/\.mdx?$/, "");
-      return slug;
-    }
+    .sort  ((a, b) => (
+      a.data.pubDate!.valueOf() - 
+      b.data.pubDate!.valueOf()
+    ))
 
-    const i = ideas.findIndex(each => slugOf(each) === slugOf(idea))
-    const prev = i >                0 ? ideas[i - 1] : undefined
-    const next = i < ideas.length - 1 ? ideas[i + 1] : undefined
-    const slug = slugOf(idea)
+  return ideas.map(idea => {
+    const 
+      where    = ideas.findIndex(each => Idea.slug(each) === Idea.slug(idea)),
+      prevIdea = ideas[(where + ideas.length - 1) % ideas.length],
+      nextIdea = ideas[(where + ideas.length + 1) % ideas.length],
+      slug     = Idea.slug(idea);
 
     return {
-      params: { slug             },
-      props : { idea, prev, next },
+      params: { slug                     },
+      props : { idea, prevIdea, nextIdea },
     }
   });
 }
 
-const { idea, prev, next } = Astro.props;
-const { Content }  =  await render(idea);
+const { idea, prevIdea, nextIdea } =         Astro.props;
+const { Content                  } =  await render(idea);
 ---
 
 <Layout>
@@ -68,7 +59,7 @@ const { Content }  =  await render(idea);
       </div>
 
       <!-- Article -->
-      <div class="flex flex-col w-full flex-1 sm:max-w-2xl sm:shadow-lg prose prose-sm sm:prose-lg break-words sm:break-normal p-8">
+      <div class="flex flex-col w-full flex-1 sm:max-w-2xl sm:shadow-lg prose prose-sm sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
         <Content/>
       </div>
     </div>
@@ -78,34 +69,36 @@ const { Content }  =  await render(idea);
       <!-- Spacing -->
       <div class="h-4"></div>
 
-      <div class="flex flex-row w-3xs sm:w-2xl justify-center gap-2">
-        { prev && (
-          <a href={`/idea/${slugOf(prev)}`} class="flex flex-row flex-1 items-center rounded-lg hover:bg-base-200">
-            <ArrowLeft class="w-10 h-10"/>
-            <div class="divider divider-horizontal"></div>
-            <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg sm:text-xl font-bold">
-                { prev.data.title }
-              </span>
-            </div>
+      <div class="flex flex-row w-fit sm:w-2xl justify-center items-center gap-2">
+
+        <a href={`/idea/${Idea.slug(prevIdea)}`} class="flex flex-row flex-1 p-2 self-stretch items-center justify-center rounded-lg hover:bg-base-200"> 
+          <ArrowLeft class="w-10 h-10"/>
+          <div class="hidden sm:flex divider divider-horizontal"></div>
+          <span class="hidden sm:inline text-lg font-bold flex-1 text-center">
+            { prevIdea.data.title }
+          </span>
+        </a>
+
+        <span class="tooltip tooltip-bottom" data-tip="More Ideas">
+          <a href="/idea" class="btn btn-xl btn-ghost btn-circle">
+            <Ellipsis class="w-10 h-10"/>
           </a>
-        )}
-  
-        { next && (
-          <a href={`/idea/${slugOf(next)}`} class="flex flex-row flex-1 items-center rounded-lg hover:bg-base-200">
-            <div class="flex flex-col flex-1 items-end">
-              <span class="text-lg sm:text-xl font-bold">
-                { next.data.title }
-              </span>
-            </div>
-            <div class="divider divider-horizontal"></div>
-            <ArrowRight class="w-10 h-10"/> 
-          </a>
-        )}
+        </span>
+
+        
+        <a href={`/idea/${Idea.slug(nextIdea)}`} class="flex flex-row flex-1 p-2 self-stretch items-center justify-center rounded-lg hover:bg-base-200">
+          <span class="hidden sm:inline text-lg font-bold flex-1 text-center">
+            { nextIdea.data.title }
+          </span>
+          <div class="hidden sm:flex divider divider-horizontal"></div>
+          <ArrowRight class="w-10 h-10"/>
+        </a>
+          
+
       </div>
 
       <!-- Spacing -->
-      <div class="h-4"></div>
+      <div class="h-12"></div>
     </div>
   </Drawer>
 </Layout>

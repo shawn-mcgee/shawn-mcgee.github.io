@@ -17,7 +17,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
       "@icons/*": ["src/components/icons/*"],
-      "@fun/*": ["src/components/fun/*"]
+      "@fun/*": ["src/components/fun/*"],
+      "@tool/*": ["src/tool/*"]
     }
   }
 }
