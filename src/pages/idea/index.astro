@@ -19,19 +19,15 @@ const ideas = (await getCollection("ideas"))
       <div class="h-4"></div>
       <span class="text-6xl font-bold text-center">Ideas</span>
       <div class="h-4"></div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 w-full 2xl:max-w-2xl">
+      <div class="w-full grid grid-cols-1 max-w-xs sm:grid-cols-2 sm:max-w-2xl lg:grid-cols-3 lg:max-w-5xl">
         { ideas.map(idea => (
           <a href={`/idea/${Idea.slug(idea)}`} class="flex flex-row items-center p-4 rounded-lg hover:bg-base-200">
             { !Idea.isDraft(idea) && <Lightbulb    class="w-10 h-10"/> }
             {  Idea.isDraft(idea) && <Construction class="w-10 h-10"/> }
             <div class="divider divider-horizontal"></div>
             <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg lg:text-xl font-bold">{idea.data.title }</span>
-              <div class="text-sm lg:text-lg flex flex-row gap-1 ">
-                { idea.data.author && <span>{idea.data.author}</span>}
-                { (idea.data.author && idea.data.pubDate) && "|" }
-                { idea.data.pubDate && <span>{idea.data.pubDate?.toDateString()}</span>}
-              </div>
+              <span class="text-lg sm:text-xl font-bold">{idea.data.title }</span>
+              { idea.data.pubDate && <span class="text-sm sm:text-lg">{idea.data.pubDate?.toDateString()}</span>}
             </div>
           </a>
         ))}

@@ -55,20 +55,24 @@ const { Content                  } =  await render(idea);
       <!-- Header -->
       <div class="flex flex-col w-3xs items-center sm:w-lg">
         <!-- Author | Date -->
-        <div class="hidden sm:flex flex-row w-full justify-center gap-2 text-lg">
-          <span>{idea.data.author                 }</span>
-          { (idea.data.author && idea.data.pubDate) ? "|" : "" }
-          <span>{idea.data.pubDate?.toDateString()}</span>
+        <div class="flex flex-row w-full justify-center gap-2 text-sm sm:text-lg">
+          { idea.data.author  && <span>{idea.data.author                 }</span> }
+          { (idea.data.author && idea.data.pubDate) && "|" }
+          { idea.data.pubDate && <span>{idea.data.pubDate?.toDateString()}</span> }
         </div>
 
         <!-- Title -->
-        <span class="text-2xl text-center font-bold sm:text-4xl">
+        <span class="text-3xl text-center font-bold sm:text-4xl">
           {idea.data.title}
         </span>
 
-        <!-- Tags -->
-        <Tags tags={idea.data.tags} class="text-sm sm:text-lg"/>
+        
       </div>
+
+      <!-- Tags -->
+      <Tags tags={idea.data.tags} class="text-sm sm:text-lg"/>
+
+      <div class="h-4"></div>
 
 
 
@@ -79,8 +83,8 @@ const { Content                  } =  await render(idea);
             <Construction class="w-10 h-10 shrink-0"/>
             <div class="divider divider-horizontal"></div>
             <div class="flex flex-col flex-1">
-              <span class="text-xl font-bold">This Idea is Under Construction</span>
-              <span class="italic">
+              <span class="text-lg sm:text-xl font-bold">This Idea is Under Construction</span>
+              <span class="text-sm sm:text-base italic">
                 This article is a working draft.
                 Some or all of its content may be unfinished,
                 may be altered,
@@ -88,7 +92,7 @@ const { Content                  } =  await render(idea);
             </div>
           </div>
         )}
-        <div class="prose prose-sm sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
+        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
           <Content/>
         </div>
       </div>

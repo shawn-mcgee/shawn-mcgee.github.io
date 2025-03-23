@@ -9,7 +9,7 @@ tags: [
 
 As a freelance developer, one piece of advice I often receive is simply to "write". I have tried and failed many times to start a blog and the one thing that always seems to stand in my way is the simple fact that *writing is hard*. Or to be more specific that *good writing is hard*.
 
-For lack of a better term, what I am going to refer to as "Developer Culture", exerts tremendous pressure on individuals to overshare via blogs, newsletters, tweets (xeets?), videos, portfolios, et cetera.
+For lack of a better term, what I am going to refer to as "Developer Culture", exerts tremendous pressure on individuals to overshare via blogs, newsletters, tweets (xeets?), videos, podcasts, et cetera.
 
 <!-- I have felt this pressure permeate my being to manifest as guilt. The hypercritical voice inside of my head often whispers "You should be blogging about this", "You should turn this into a twelve-part video series on YouTube", "You should be posting that -->
 
