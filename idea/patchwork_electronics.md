@@ -1,6 +1,10 @@
 ---
 title: Patchwork Electronics
 author: Shawn McGee
+tags: [
+  "patchwork",
+  "electronics"
+]
 ---
 
 I find I do my best philosophizing in the shower and during long drives on the I25. I was driving home with my partner this evening when a strange contradiction floated to the front of my mind. 
