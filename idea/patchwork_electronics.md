@@ -3,7 +3,8 @@ title: Patchwork Electronics
 author: Shawn McGee
 tags: [
   "patchwork",
-  "electronics"
+  "electronics",
+  "developer"
 ]
 ---
 
