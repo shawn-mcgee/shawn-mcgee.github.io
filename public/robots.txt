@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://shawn-mcgee.github.io/sitemap-index.xml
