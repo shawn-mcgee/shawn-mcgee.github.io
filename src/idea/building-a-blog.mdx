@@ -1,0 +1,116 @@
+### Scaffolding a Project with Astro
+
+```bash
+npm create astro@latest
+```
+
+I chose to `use minimal (empty) template` 
+
+I included the following integrations -
+
+```bash
+npx astro add react mdx sitemap
+```
+
+Create the following directories
+
+```bash
+mkdir src/ui/components
+mkdir src/ui/layouts
+mkdir src/ui/styles
+```
+
+Modify `tsconfig.json` to include path aliases
+
+```json
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@ui/*"        : [ "src/ui/*"            ],
+      "@styles/*"    : [ "src/ui/styles/*"     ],
+      "@layouts/*"   : [ "src/ui/layouts/*"    ],
+      "@components/*": [ "src/ui/components/*" ]
+    }
+  }
+}
+```
+
+### Installing TailwindCSS
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+Modify `astro.config.mjs` to include TailwindCSS
+
+```js
+// @ts-check
+import { defineConfig } from 'astro/config';
+
+import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [mdx(), react(), sitemap()],
+  vite: {
+    plugins: [tailwindcss()]
+  },
+});
+```
+
+Create and modify `src/ui/styles/site.css`
+
+```css
+@import "tailwindcss/base";
+```
+
+### Installing DaisyUI
+
+```bash
+npm i -D daisyui@latest
+```
+
+Modify `src/ui/styles/universe.css`
+
+
+```css
+@import "tailwindcss/base";
+@plugin "daisyui";
+```
+
+### Creating a Layout
+
+Include stylesheet in layout
+
+```astro
+---
+import "@styles/site.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Shawn McGee</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+```
