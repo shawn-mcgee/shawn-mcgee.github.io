@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: autumn --default, dark --prefersdark, coffee;
+  themes: valentine --default, dracula --prefersdark;
 }
 
-@custom-variant dark (&:where([data-theme=coffee], [data-theme=coffee] *));
+@custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
+
+@theme {
+  --font-sans: var(--font-figtree);
+}

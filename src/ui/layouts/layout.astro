@@ -1,10 +1,12 @@
 ---
 import "@styles/site.css";
+import { Font } from "astro:assets";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
+    <Font cssVariable="--font-figtree" />
     <!-- Recall and configure theme on page load -->
     <script is:inline>
       if (localStorage.getItem("theme") === null) {

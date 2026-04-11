@@ -35,12 +35,11 @@ Modify `tsconfig.json` to include path aliases
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "baseUrl": ".",
     "paths": {
-      "@ui/*"        : [ "src/ui/*"            ],
-      "@styles/*"    : [ "src/ui/styles/*"     ],
-      "@layouts/*"   : [ "src/ui/layouts/*"    ],
-      "@components/*": [ "src/ui/components/*" ]
+      "@ui/*"        : [ "./src/ui/*"            ],
+      "@styles/*"    : [ "./src/ui/styles/*"     ],
+      "@layouts/*"   : [ "./src/ui/layouts/*"    ],
+      "@components/*": [ "./src/ui/components/*" ]
     }
   }
 }
