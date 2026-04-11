@@ -1,7 +1,7 @@
 ---
 import ToggleTheme from "@components/theme/toggle-theme.astro";
 import Layout from "@layouts/layout.astro";
-import { BadgeQuestionMark, Star } from "@lucide/astro";
+import { BadgeQuestionMark, FlaskConical } from "@lucide/astro";
 import Github from "@ui/components/icons/Github.astro";
 import Itchio from "@ui/components/icons/Itchio.astro";
 ---
@@ -13,14 +13,14 @@ import Itchio from "@ui/components/icons/Itchio.astro";
         <ToggleTheme/>
       </div>
 
-      <span class="font-bold text-6xl">Shawn McGee</span>
-      <span class="text-2xl">Full-Time Dad // All-Time Developer</span>
+      <span class="font-bold text-6xl text-center text-primary">Shawn McGee</span>
+      <span class="text-2xl text-center">Full-Time Dad // <br class="sm:hidden"/>All-Time Developer</span>
 
-      <div class="flex flex-row gap-2">
+      <div class="flex flex-row gap-2 mt-4">
         <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">Ideas</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="#ideas">
-            <Star class="w-8 h-8" />
+            <FlaskConical class="w-8 h-8" />
           </a>
         </div>
         <div class="tooltip tooltip-bottom">

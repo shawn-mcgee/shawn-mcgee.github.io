@@ -1,0 +1,122 @@
+---
+import ToggleTheme from "@components/theme/toggle-theme.astro";
+import Layout from "@layouts/layout.astro";
+---
+
+<Layout>
+  <div class="w-full flex flex-col overflow-y-auto">
+    <div class="w-full h-dvh flex flex-col justify-center items-center">
+      <div class="fixed right-4 top-4">
+        <ToggleTheme/>
+      </div>
+
+      <span class="text-xl font-semibold text-primary">Howdy, I'm Shawn.</span>
+      <ol>
+        <li>
+          <div class="tooltip tooltip-left">
+            <span class="tooltip-content">#dad</span>
+            <a class="btn btn-ghost text-lg font-normal" href="#dad">
+              Being a Dad is the coolest thing I get to do.
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="tooltip tooltip-left">
+            <span class="tooltip-content">#teacher</span>
+            <a class="btn btn-ghost text-lg font-normal" href="#teacher">
+              I love teaching as much as I love learning.
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="tooltip tooltip-left">
+            <span class="tooltip-content">#developer</span>
+            <a class="btn btn-ghost text-lg font-normal" href="#developer">
+              I build software for humans.
+            </a>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="flex flex-col w-full justify-center items-center gap-2 self-center">
+
+      <h2 class="font-bold text-3xl mt-4 text-primary" id="dad">Dad</h2>
+
+      <p class="text-lg w-md text-left">
+        Being a Dad is an awesome responsibility. Every day I strive to make my world a better place because my daughter will one day inherit it.
+      </p>
+  
+      <h2 class="font-bold text-3xl mt-4 text-primary" id="teacher">Teacher</h2>
+
+      <p class="text-lg w-md text-left">        
+        I teach because there is joy in creation. I love sharing in that joy by passing on skills that students can use to bring their own ideas to life.
+      </p>
+  
+      <h2 class="font-bold text-3xl mt-4 text-primary" id="developer">Developer</h2>
+
+      <p class="text-lg w-md text-left">
+        I tinker with experiments that challenge the status quo. In a world of ai and surveillance capitalism, I care about developing free and open source software that respects people's time and keeps them in control of their data.
+      </p>
+
+      <div class="divider divider-vertical w-md self-center"></div>
+
+      <h2 class="font-bold text-3xl mt-4 text-accent" id="skills">Skills</h2>
+
+      <p class="text-lg w-md text-left">
+        I am always learning something new. Here are just a few of the tools I have used to build cool stuff.
+      </p>
+
+      <p class="flex flex-wrap justify-between w-md mt-4 gap-1">
+        <span class="badge badge-ghost">Java</span>
+        <span class="badge badge-ghost">Kotlin</span>
+        <span class="badge badge-ghost">Python</span>
+        <span class="badge badge-ghost">JavaScript</span>
+        <span class="badge badge-ghost">TypeScript</span>
+        <span class="badge badge-ghost">C#</span>
+        <span class="badge badge-ghost">C++</span>
+        <span class="badge badge-ghost">Rust</span>
+        <span class="badge badge-ghost">Node.js</span>
+        <span class="badge badge-ghost">Deno</span>
+        <span class="badge badge-ghost">Bun</span>
+        <span class="badge badge-ghost">npm</span>
+        <span class="badge badge-ghost">React</span>
+        <span class="badge badge-ghost">Svelte</span>
+        <span class="badge badge-ghost">Vue</span>
+        <span class="badge badge-ghost">Astro</span>
+        <span class="badge badge-ghost">Vite</span>
+        <span class="badge badge-ghost">TailwindCSS</span>
+        <span class="badge badge-ghost">CSS</span>
+        <span class="badge badge-ghost">HTML</span>
+        <span class="badge badge-ghost">Markdown</span>
+        <span class="badge badge-ghost">Unity</span>
+        <span class="badge badge-ghost">Godot</span>
+        <span class="badge badge-ghost">GdScript</span>
+        <span class="badge badge-ghost">Git</span>
+        <span class="badge badge-ghost">GitHub</span>
+        <span class="badge badge-ghost">GitLab</span>
+        <span class="badge badge-ghost">Google Apps Script</span>
+        <span class="badge badge-ghost">Bash</span>
+        <span class="badge badge-ghost">Powershell</span>
+        <span class="badge badge-ghost">YAML</span>
+        <span class="badge badge-ghost">JSON</span>
+        <span class="badge badge-ghost">Linux</span>
+        <span class="badge badge-ghost">Android</span>
+        <span class="badge badge-ghost">Qt</span>
+        <span class="badge badge-ghost">Arduino</span>
+      </p>
+
+      <h2 class="font-bold text-3xl mt-4 flex gap-1 items-center text-accent">Contact</h2>
+
+      <p class="text-lg w-md text-left">
+        If you're building something thoughtful, or just want to connect, I'd love to hear from you.
+      </p>
+
+      <a href="mailto:shawn.maurice.mcgee@email.com" class="text-lg underline">
+        shawn.maurice.mcgee@gmail.com
+      </a>
+
+      <div class="h-32"></div>
+    </div>
+  </div>
+</Layout>
