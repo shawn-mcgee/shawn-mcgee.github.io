@@ -1,0 +1,49 @@
+---
+import ToggleTheme from '@ui/components/theme/toggle-theme.astro';
+import Layout from '@ui/layouts/layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  function getSlug(filePath: string) {
+    return filePath
+      .replace(/src\/content\/ideas\//, '')
+      .replace(/\.mdx?$/              , '')
+  }
+
+  const ideas = await getCollection('ideas');
+  return ideas.map((idea) => ({
+    params: { slug: getSlug(idea.filePath!) },
+    props: { idea },
+  }));
+}
+
+const { idea } = Astro.props;
+
+const { Content } = await render(idea);
+---
+
+<Layout>
+  <div class="relative w-full flex flex-col items-center">
+    
+    <div class="fixed top-4 right-4">
+      <ToggleTheme/>
+    </div>
+
+    <!-- header -->
+    <div class="m-4 flex flex-col items-center">
+      <span class="text-lg">
+        {idea.data.author}
+      </span>
+      <h1 class="font-bold text-4xl">
+        {idea.data.title}
+      </h1>
+    </div>
+
+    <!-- content -->
+    <div class="w-2xl p-8 bg-base shadow-2xl">
+      <article class="prose max-w-none">
+        <Content />
+      </article>
+    </div>
+  </div>
+</Layout>

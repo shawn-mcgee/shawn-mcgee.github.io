@@ -10,7 +10,7 @@ import { Font } from "astro:assets";
     <!-- Recall and configure theme on page load -->
     <script is:inline>
       if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme",                      "light" );
+        document.documentElement.setAttribute("data-theme", "valentine");
       } else {
         document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
       }
