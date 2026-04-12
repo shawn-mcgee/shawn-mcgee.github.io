@@ -1,0 +1,15 @@
+---
+import Layout from "@layouts/layout.astro";
+
+import { getCollection } from "astro:content";
+
+const ideas = await getCollection("ideas");
+
+
+---
+
+<Layout>
+  {ideas.map(idea => {
+    return <div>{idea.data.title}</div>
+  })}
+</Layout>

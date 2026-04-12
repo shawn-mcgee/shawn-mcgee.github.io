@@ -33,10 +33,19 @@ const { Content } = await render(idea);
     <div class="m-4 flex flex-col items-center">
       <span class="text-lg">
         {idea.data.author}
+        {idea.data.date && <span> | {idea.data.date.toDateString()}</span>}
       </span>
       <h1 class="font-bold text-4xl">
         {idea.data.title}
       </h1>
+
+      {Boolean(idea.data.tags?.length) && (<div class="flex flex-row max-w-md flex-wrap m-2">
+        {idea.data.tags?.map(tag => (
+          <span class="badge badge-ghost">
+            #{tag}
+          </span>
+        ))}
+      </div>)}
     </div>
 
     <!-- content -->
