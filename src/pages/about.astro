@@ -16,7 +16,7 @@ import { Heart } from "@lucide/astro";
         <li>
           <div class="tooltip tooltip-left">
             <span class="tooltip-content">#dad</span>
-            <a class="btn btn-ghost text-lg font-normal" href="#dad">
+            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
               <Heart/> I love being a Dad.
             </a>
           </div>
@@ -24,7 +24,7 @@ import { Heart } from "@lucide/astro";
         <li>
           <div class="tooltip tooltip-left">
             <span class="tooltip-content">#teacher</span>
-            <a class="btn btn-ghost text-lg font-normal" href="#teacher">
+            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
               <Heart/> I love learning and sharing.
             </a>
           </div>
@@ -32,7 +32,7 @@ import { Heart } from "@lucide/astro";
         <li>
           <div class="tooltip tooltip-left">
             <span class="tooltip-content">#developer</span>
-            <a class="btn btn-ghost text-lg font-normal" href="#developer">
+            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
               <Heart/> I love building software for humans.
             </a>
           </div>
@@ -40,7 +40,8 @@ import { Heart } from "@lucide/astro";
       </ol>
     </div>
 
-    <div class="flex flex-col w-full justify-center items-center gap-2 self-center">
+    <a id="i-love"></a>
+    <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
 
       <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
 
@@ -59,8 +60,9 @@ import { Heart } from "@lucide/astro";
       <p class="text-lg w-md text-left">
         In a world of AI and surveillance capitalism, I care about developing free and open source software that respects people's time and keeps them in control of their data.
       </p>
+    </div>
 
-      <div class="divider divider-vertical w-md self-center"></div>
+    <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
 
       <h2 class="text-4xl mt-8 text-accent font-(family-name:--font-bungee)" id="skills">Skills</h2>
 
@@ -110,14 +112,12 @@ import { Heart } from "@lucide/astro";
       <h2 class="text-4xl mt-8 flex gap-1 items-center text-accent font-(family-name:--font-bungee)">Contact</h2>
 
       <p class="text-lg w-md text-left">
-        If you're building something thoughtful, or just want to connect, I'd love to hear from you.
+        If you're building something cool, or just want to connect, I'd love to hear from you.
       </p>
 
       <a href="mailto:shawn.maurice.mcgee@email.com" class="text-lg underline">
         shawn.maurice.mcgee@gmail.com
       </a>
-
-      <div class="h-32"></div>
     </div>
   </div>
 </Layout>
