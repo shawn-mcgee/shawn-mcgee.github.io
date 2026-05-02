@@ -1,6 +1,7 @@
 ---
 import ToggleTheme from "@components/theme/toggle-theme.astro";
 import Layout from "@layouts/layout.astro";
+import { Heart } from "@lucide/astro";
 ---
 
 <Layout>
@@ -10,13 +11,13 @@ import Layout from "@layouts/layout.astro";
         <ToggleTheme/>
       </div>
 
-      <span class="text-xl font-semibold text-primary">Howdy, I'm Shawn.</span>
+      <span class="text-4xl text-primary font-(family-name:--font-bungee)">Howdy, I'm Shawn.</span>
       <ol>
         <li>
           <div class="tooltip tooltip-left">
             <span class="tooltip-content">#dad</span>
             <a class="btn btn-ghost text-lg font-normal" href="#dad">
-              Being a Dad is the coolest thing I get to do.
+              <Heart/> I love being a Dad.
             </a>
           </div>
         </li>
@@ -24,7 +25,7 @@ import Layout from "@layouts/layout.astro";
           <div class="tooltip tooltip-left">
             <span class="tooltip-content">#teacher</span>
             <a class="btn btn-ghost text-lg font-normal" href="#teacher">
-              I love teaching as much as I love learning.
+              <Heart/> I love learning and sharing.
             </a>
           </div>
         </li>
@@ -32,7 +33,7 @@ import Layout from "@layouts/layout.astro";
           <div class="tooltip tooltip-left">
             <span class="tooltip-content">#developer</span>
             <a class="btn btn-ghost text-lg font-normal" href="#developer">
-              I build software for humans.
+              <Heart/> I love building software for humans.
             </a>
           </div>
         </li>
@@ -41,27 +42,27 @@ import Layout from "@layouts/layout.astro";
 
     <div class="flex flex-col w-full justify-center items-center gap-2 self-center">
 
-      <h2 class="font-bold text-3xl mt-4 text-primary" id="dad">Dad</h2>
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
 
       <p class="text-lg w-md text-left">
-        Being a Dad is an awesome responsibility. Every day I strive to make my world a better place because my daughter will one day inherit it.
+        Every day I choose to make my world better so my daughter can live free of the burdens that have haunted my own life.
       </p>
   
-      <h2 class="font-bold text-3xl mt-4 text-primary" id="teacher">Teacher</h2>
-
-      <p class="text-lg w-md text-left">        
-        I teach because there is joy in creation. I love sharing in that joy by passing on skills that students can use to bring their own ideas to life.
-      </p>
-  
-      <h2 class="font-bold text-3xl mt-4 text-primary" id="developer">Developer</h2>
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="teacher">Teacher</h2>
 
       <p class="text-lg w-md text-left">
-        I tinker with experiments that challenge the status quo. In a world of ai and surveillance capitalism, I care about developing free and open source software that respects people's time and keeps them in control of their data.
+        Teaching has many frustrations, but sharing moments steeped in the joy of discovery and creation makes it worthwhile.
+      </p>
+  
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="developer">Developer</h2>
+
+      <p class="text-lg w-md text-left">
+        In a world of AI and surveillance capitalism, I care about developing free and open source software that respects people's time and keeps them in control of their data.
       </p>
 
       <div class="divider divider-vertical w-md self-center"></div>
 
-      <h2 class="font-bold text-3xl mt-4 text-accent" id="skills">Skills</h2>
+      <h2 class="text-4xl mt-8 text-accent font-(family-name:--font-bungee)" id="skills">Skills</h2>
 
       <p class="text-lg w-md text-left">
         I am always learning something new. Here are just a few of the tools I have used to build cool stuff.
@@ -106,7 +107,7 @@ import Layout from "@layouts/layout.astro";
         <span class="badge badge-ghost">Arduino</span>
       </p>
 
-      <h2 class="font-bold text-3xl mt-4 flex gap-1 items-center text-accent">Contact</h2>
+      <h2 class="text-4xl mt-8 flex gap-1 items-center text-accent font-(family-name:--font-bungee)">Contact</h2>
 
       <p class="text-lg w-md text-left">
         If you're building something thoughtful, or just want to connect, I'd love to hear from you.

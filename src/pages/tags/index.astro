@@ -1,7 +1,41 @@
 ---
 import Layout from "@layouts/layout.astro";
+import { getCollection } from "astro:content";
+
+
+const ideas = await getCollection("ideas");
+
+const byTag: Record<string, typeof ideas[number][]> = {};
+
+ideas.forEach(idea => {
+  idea.data.tags?.forEach(tag => {
+    tag = tag.trim().toLowerCase();
+    if (byTag[tag] === undefined)
+      byTag[tag]  =  [idea];
+    else
+      byTag[tag].push(idea);
+  })
+})
 ---
 
 <Layout>
+
+  <script is:inline>
+    function goto(tag) {
+      window.location.href = `/tags/${tag}`
+    }
+  </script>
+
+  <div class="flex flex-col items-center m-12">
+    <h1 class="text-4xl font-bold">Tags</h1>
+    <div class="grid grid-cols-5 gap-4 w-4xl mt-4">
+      {Object.keys(byTag).map(tag => (
+        <div onclick={`goto('${tag}')`}>
+          {tag}
+        </div>
+      ))}
+
+    </div>
+  </div>
 
 </Layout>
