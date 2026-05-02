@@ -39,7 +39,7 @@ const { Content } = await render(idea);
         {idea.data.title}
       </h1>
 
-      {Boolean(idea.data.tags?.length) && (<div class="flex flex-row max-w-md flex-wrap m-2">
+      {Boolean(idea.data.tags?.length) && (<div class="flex flex-row max-w-md flex-wrap m-2 gap-2">
         {idea.data.tags?.map(tag => (
           <span class="badge badge-ghost">
             #{tag}

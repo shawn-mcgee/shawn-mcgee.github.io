@@ -1,7 +1,7 @@
 ---
 import ToggleTheme from "@components/theme/toggle-theme.astro";
 import Layout from "@layouts/layout.astro";
-import { BadgeQuestionMark, FlaskConical } from "@lucide/astro";
+import { BadgeQuestionMark, FlaskConical, Star } from "@lucide/astro";
 import Github from "@ui/components/icons/Github.astro";
 import Itchio from "@ui/components/icons/Itchio.astro";
 ---
@@ -9,38 +9,55 @@ import Itchio from "@ui/components/icons/Itchio.astro";
 <Layout>
   <div class="flex flex-col overflow-y-auto">
     <div class="w-full h-dvh flex flex-col justify-center items-center">
+
+      <!-- Toggle theme -->
       <div class="fixed right-4 top-4">
         <ToggleTheme/>
       </div>
 
-      <span class="font-bold text-6xl text-center text-primary">Shawn McGee</span>
-      <span class="text-2xl text-center text-accent">Full-Time Dad // <br class="sm:hidden"/>All-Time Developer</span>
+      <!-- Hero -->
+      <div class="flex flex-col sm:flex-row gap-2 items-center justify-center text-6xl text-primary font-(family-name:--font-bungee)">
+        <span>Shawn</span>
+        <Star class="w-10 h-10 hidden sm:block" />
+        <span>McGee</span>
+      </div>
+      <span class="text-2xl text-center hidden sm:block">Full-Time Dad // All-Time Developer</span>
 
-      <div class="flex flex-row gap-2 mt-4">
+      <!-- Links -->
+      <div class="flex flex-row gap-2 mt-2">
+
+        <!-- Link to blog -->
         <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">Ideas</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="#ideas">
             <FlaskConical class="w-8 h-8" />
           </a>
         </div>
+
+        <!-- Link to GitHub -->
         <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">GitHub</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="https://github.com/shawn-mcgee" target="_blank">
             <Github class="w-8 h-8" />
           </a>
         </div>
+
+        <!-- Link to Itch.io -->
         <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">Itch.io</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="https://shawn-mcgee.itch.io" target="_blank">
             <Itchio class="w-8 h-8" />
           </a>
         </div>
+
+        <!-- Link to About -->
         <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">About</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="/about">
             <BadgeQuestionMark class="w-8 h-8" />
           </a>
         </div>
+
       </div>
     </div>
     <a id="ideas"></a>

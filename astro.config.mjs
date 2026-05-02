@@ -18,6 +18,11 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: 'Figtree',
       cssVariable: '--font-figtree',
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Bungee',
+      cssVariable: '--font-bungee',
     }
   ]
 });
