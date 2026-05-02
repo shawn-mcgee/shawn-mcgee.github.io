@@ -10,15 +10,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "strictNullChecks": true,
-    "allowJs": true,
-    "baseUrl": ".",
     "paths": {
-      "@layouts/*": ["src/layouts/*"],
-      "@components/*": ["src/components/*"],
-      "@icons/*": ["src/components/icons/*"],
-      "@fun/*": ["src/components/fun/*"],
-      "@tool/*": ["src/tool/*"]
+      "@ui/*"        : [ "./src/ui/*"            ],
+      "@styles/*"    : [ "./src/ui/styles/*"     ],
+      "@layouts/*"   : [ "./src/ui/layouts/*"    ],
+      "@components/*": [ "./src/ui/components/*" ]
     }
   }
 }

@@ -1,35 +1,123 @@
 ---
-import Drawer from "@layouts/Drawer.astro";
-import Layout from "@layouts/Layout.astro";
+import ToggleTheme from "@components/theme/toggle-theme.astro";
+import Layout from "@layouts/layout.astro";
+import { Heart } from "@lucide/astro";
 ---
 
 <Layout>
-  <Drawer>
+  <div class="w-full flex flex-col overflow-y-auto">
+    <div class="w-full h-dvh flex flex-col justify-center items-center">
+      <div class="fixed right-4 top-4">
+        <ToggleTheme/>
+      </div>
 
-    <div class="flex flex-col w-full h-full justify-center items-center">
-      <h1>About</h1>
-  
-      <span>The projects that make this site possible</span>
-      <ul class="flex flex-row gap-0">
-        <li class="btn btn-sm btn-ghost">
-          <a href="https://github.com/oven-sh/bun">Bun</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/withastro/astro">Astro</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/tailwindlabs/tailwindcss">TailwindCSS</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/saadeghi/daisyui">daisyUI</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/saadeghi/theme-change">CSS Theme Change</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/mdx-js/mdx">MDX</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/dzeiocom/lucide-astro" target="_blank">lucide-astro</a></li>
-        <li class="btn btn-sm btn-ghost ">
-          <a href="https://github.com/expressive-code/expressive-code" target="_blank">Expressive Code</a></li>
-      </ul>
+      <span class="text-4xl text-primary font-(family-name:--font-bungee)">Howdy, I'm Shawn.</span>
+      <ol>
+        <li>
+          <div class="tooltip tooltip-left">
+            <span class="tooltip-content">#dad</span>
+            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
+              <Heart/> I love being a Dad.
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="tooltip tooltip-left">
+            <span class="tooltip-content">#teacher</span>
+            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
+              <Heart/> I love learning and sharing.
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="tooltip tooltip-left">
+            <span class="tooltip-content">#developer</span>
+            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
+              <Heart/> I love building software for humans.
+            </a>
+          </div>
+        </li>
+      </ol>
     </div>
-    
-  </Drawer>
 
+    <a id="i-love"></a>
+    <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
+
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
+
+      <p class="text-lg w-md text-left">
+        Every day I choose to make my world better so my daughter can live free of the burdens that have haunted my own life.
+      </p>
+  
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="teacher">Teacher</h2>
+
+      <p class="text-lg w-md text-left">
+        Teaching has many frustrations, but sharing moments steeped in the joy of discovery and creation makes it worthwhile.
+      </p>
+  
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="developer">Developer</h2>
+
+      <p class="text-lg w-md text-left">
+        In a world of AI and surveillance capitalism, I care about developing free and open source software that respects people's time and keeps them in control of their data.
+      </p>
+    </div>
+
+    <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
+
+      <h2 class="text-4xl mt-8 text-accent font-(family-name:--font-bungee)" id="skills">Skills</h2>
+
+      <p class="text-lg w-md text-left">
+        I am always learning something new. Here are just a few of the tools I have used to build cool stuff.
+      </p>
+
+      <p class="flex flex-wrap justify-between w-md mt-4 gap-1">
+        <span class="badge badge-ghost">Java</span>
+        <span class="badge badge-ghost">Kotlin</span>
+        <span class="badge badge-ghost">Python</span>
+        <span class="badge badge-ghost">JavaScript</span>
+        <span class="badge badge-ghost">TypeScript</span>
+        <span class="badge badge-ghost">C#</span>
+        <span class="badge badge-ghost">C++</span>
+        <span class="badge badge-ghost">Rust</span>
+        <span class="badge badge-ghost">Node.js</span>
+        <span class="badge badge-ghost">Deno</span>
+        <span class="badge badge-ghost">Bun</span>
+        <span class="badge badge-ghost">npm</span>
+        <span class="badge badge-ghost">React</span>
+        <span class="badge badge-ghost">Svelte</span>
+        <span class="badge badge-ghost">Vue</span>
+        <span class="badge badge-ghost">Astro</span>
+        <span class="badge badge-ghost">Vite</span>
+        <span class="badge badge-ghost">TailwindCSS</span>
+        <span class="badge badge-ghost">CSS</span>
+        <span class="badge badge-ghost">HTML</span>
+        <span class="badge badge-ghost">Markdown</span>
+        <span class="badge badge-ghost">Unity</span>
+        <span class="badge badge-ghost">Godot</span>
+        <span class="badge badge-ghost">GdScript</span>
+        <span class="badge badge-ghost">Git</span>
+        <span class="badge badge-ghost">GitHub</span>
+        <span class="badge badge-ghost">GitLab</span>
+        <span class="badge badge-ghost">Google Apps Script</span>
+        <span class="badge badge-ghost">Bash</span>
+        <span class="badge badge-ghost">Powershell</span>
+        <span class="badge badge-ghost">YAML</span>
+        <span class="badge badge-ghost">JSON</span>
+        <span class="badge badge-ghost">Linux</span>
+        <span class="badge badge-ghost">Android</span>
+        <span class="badge badge-ghost">Qt</span>
+        <span class="badge badge-ghost">Arduino</span>
+      </p>
+
+      <h2 class="text-4xl mt-8 flex gap-1 items-center text-accent font-(family-name:--font-bungee)">Contact</h2>
+
+      <p class="text-lg w-md text-left">
+        If you're building something cool, or just want to connect, I'd love to hear from you.
+      </p>
+
+      <a href="mailto:shawn.maurice.mcgee@email.com" class="text-lg underline">
+        shawn.maurice.mcgee@gmail.com
+      </a>
+    </div>
+  </div>
 </Layout>

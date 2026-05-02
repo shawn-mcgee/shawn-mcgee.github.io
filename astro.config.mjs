@@ -1,36 +1,29 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
-
-import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
-import expressiveCode from 'astro-expressive-code';
-import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
+import sitemap from '@astrojs/sitemap';
 
-import sitemap from "@astrojs/sitemap";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://shawn-mcgee.github.io",
-  base: "/",
+  site: 'https://shawn-mcgee.github.io',
+  integrations: [mdx(), react(), sitemap()],
   vite: {
     plugins: [tailwindcss()]
   },
-
-  integrations: [expressiveCode({    
-    themes: ["github-dark", "github-light"],
-    useDarkModeMediaQuery: false,    
-    themeCssSelector: (theme) => {
-      switch (theme.name) {
-        case "github-dark" : return "[data-theme=dracula]";
-        case "github-light": return "[data-theme=valentine]";
-        default: return false;
-      }
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Figtree',
+      cssVariable: '--font-figtree',
     },
-    plugins: [ pluginLineNumbers() ],
-    defaultProps: {
-      showLineNumbers: false
+    {
+      provider: fontProviders.google(),
+      name: 'Bungee',
+      cssVariable: '--font-bungee',
     }
-  }), react(), mdx(), sitemap()],
+  ]
 });

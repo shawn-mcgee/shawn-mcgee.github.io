@@ -1,0 +1,61 @@
+---
+import Layout from "@layouts/layout.astro";
+import { Hash } from "@lucide/astro";
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const ideas = await getCollection('ideas');
+
+  const byTag: Record<string, typeof ideas[number][]> = {};
+
+  ideas.forEach(idea => {
+    idea.data.tags?.forEach(tag => {
+      tag = tag.trim().toLowerCase();
+      if (byTag[tag] === undefined)
+        byTag[tag]  =  [idea];
+      else
+        byTag[tag].push(idea);
+    })
+  })
+
+  return Object.keys(byTag).map(tag => ({
+    params: { tag },
+    props : { tag, ideas: byTag[tag] },
+  }))
+}
+
+const {tag, ideas} = Astro.props;
+
+---
+
+<Layout>
+  <script is:inline>
+    function goto(filePath) {
+      const slug = filePath
+        .replace(/src\/content\/ideas\//, '')
+        .replace(/\.mdx?$/              , '')
+      window.location.href = `/idea/${slug}`
+    }
+  </script>
+
+  <div class="flex flex-col items-center m-12">
+    <h1 class="flex gap-2 items-center text-4xl font-bold flex-nowrap"><Hash class="w-10 h-10"/>{tag}</h1>
+    <div class="grid grid-cols-3 gap-4 w-4xl mt-4">
+      {ideas.map(idea => {
+        return <div 
+          onclick={`goto('${idea.filePath}')`}
+          class="flex flex-col bg-base-300 shadow-2xl p-8 rounded-lg hover:bg-primary hover:text-primary-content hover:cursor-pointer">
+          <span class="text-lg">{idea.data.author}</span>
+          <span class="text-lg font-semibold">{idea.data.title}</span>
+          {Boolean(idea.data.tags?.length) && (<div class="flex flex-row flex-wrap m-2 gap-2">
+            {idea.data.tags?.map(tag => (
+              <span class="badge badge-ghost">
+                #{tag}
+              </span>
+            ))}
+          </div>)}
+        </div>
+      })}
+    </div>
+  </div>
+</Layout>

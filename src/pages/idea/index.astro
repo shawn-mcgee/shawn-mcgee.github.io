@@ -1,40 +1,40 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/layout.astro";
+
 import { getCollection } from "astro:content";
-import { Construction, LibraryBig, Lightbulb } from "lucide-astro";
-import { Idea } from "@tool/idea";
 
-const ideas = (await getCollection("ideas"))
-  .sort((a, b) => (
-    (b.data.pubDate?.valueOf() ?? 0) - 
-    (a.data.pubDate?.valueOf() ?? 0)
-  ))
-
+const ideas = await getCollection("ideas");
 ---
 
 <Layout>
-  <Drawer>
-    <div class="flex flex-col w-full h-full items-center">
-      <div class="h-4"></div>
-      <div class="flex flex-row gap-1">
-        <LibraryBig class="w-10 h-10"/>
-        <span class="text-4xl font-bold text-center">Ideas</span>
-      </div>      
-      <div class="h-4"></div>
-      <div class="w-full flex flex-row flex-wrap max-w-xs justify-center sm:max-w-2xl lg:max-w-5xl">
-        { ideas.map(idea => (
-          <a href={`/idea/${Idea.slug(idea)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
-            { !Idea.isDraft(idea) && <Lightbulb    class="w-10 h-10"/> }
-            {  Idea.isDraft(idea) && <Construction class="w-10 h-10"/> }
-            <div class="divider divider-horizontal"></div>
-            <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg sm:text-xl font-bold">{idea.data.title }</span>
-              { idea.data.pubDate && <span class="text-sm sm:text-lg">{idea.data.pubDate?.toDateString()}</span>}
-            </div>
-          </a>
-        ))}
-      </div>
+  
+  <script is:inline>
+    function goto(filePath) {
+      const slug = filePath
+        .replace(/src\/content\/ideas\//, '')
+        .replace(/\.mdx?$/              , '')
+      window.location.href = `/idea/${slug}`
+    }
+  </script>
+
+  <div class="flex flex-col items-center m-12">
+    <h1 class="text-4xl font-bold">Ideas</h1>
+    <div class="grid grid-cols-3 gap-4 w-4xl mt-4">
+      {ideas.map(idea => {
+        return <div 
+          onclick={`goto('${idea.filePath}')`}
+          class="flex flex-col bg-base-300 shadow-2xl p-8 rounded-lg hover:bg-primary hover:text-primary-content hover:cursor-pointer">
+          <span class="text-lg">{idea.data.author}</span>
+          <span class="text-lg font-semibold">{idea.data.title}</span>
+          {Boolean(idea.data.tags?.length) && (<div class="flex flex-row flex-wrap m-2 gap-2">
+            {idea.data.tags?.map(tag => (
+              <span class="badge badge-ghost">
+                #{tag}
+              </span>
+            ))}
+          </div>)}
+        </div>
+      })}
     </div>
-  </Drawer>
+  </div>
 </Layout>

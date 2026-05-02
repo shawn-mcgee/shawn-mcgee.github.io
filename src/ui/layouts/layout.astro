@@ -1,0 +1,33 @@
+---
+import "@styles/site.css";
+import { Font } from "astro:assets";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <Font cssVariable="--font-figtree" />
+    <Font cssVariable="--font-bungee"  />
+    <!-- Recall and configure theme on page load -->
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "valentine");
+      } else {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
+      }
+    </script>
+
+    <!-- Trigger theme-change -->
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Shawn McGee</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
