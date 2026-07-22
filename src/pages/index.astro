@@ -1,19 +1,25 @@
 ---
 import ToggleTheme from "@components/theme/toggle-theme.astro";
 import Layout from "@layouts/layout.astro";
-import { BadgeQuestionMark, FlaskConical, Star } from "@lucide/astro";
+import { BadgeQuestionMark, Check, ChevronDown, ChevronUp, CircleQuestionMark, FlaskConical, Mail, Star, UserSearch } from "@lucide/astro";
 import Github from "@ui/components/icons/Github.astro";
 import Itchio from "@ui/components/icons/Itchio.astro";
+
+import SlotMachine from "@ui/components/fun/SlotMachine";
 ---
 
 <Layout>
   <div class="flex flex-col overflow-y-auto">
-    <div class="w-full h-dvh flex flex-col justify-center items-center">
+    <div class="w-full h-dvh flex flex-col items-center">
 
       <!-- Toggle theme -->
       <div class="fixed right-4 top-4">
         <ToggleTheme/>
       </div>
+
+      <a id="home"></a>
+
+      <div class="grow"></div>
 
       <!-- Hero -->
       <div class="flex flex-col sm:flex-row gap-2 items-center justify-center text-6xl text-primary font-(family-name:--font-bungee)">
@@ -21,46 +27,162 @@ import Itchio from "@ui/components/icons/Itchio.astro";
         <Star class="w-10 h-10 hidden sm:block" />
         <span>McGee</span>
       </div>
-      <span class="text-2xl text-center hidden sm:block">Full-Time Dad // All-Time Developer</span>
+      <!-- <span class="text-2xl text-center hidden sm:block italic m-1">I write software for <strong>Humans</strong></span> -->
+
+      
+      <SlotMachine client:visible />
 
       <!-- Links -->
-      <div class="flex flex-row gap-2 mt-2">
+      <div class="flex flex-row gap-2 mt-1">
 
         <!-- Link to blog -->
-        <div class="tooltip tooltip-bottom">
+        <!-- <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">Ideas</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="#ideas">
             <FlaskConical class="w-8 h-8" />
           </a>
-        </div>
+        </div> -->
 
         <!-- Link to GitHub -->
-        <div class="tooltip tooltip-bottom">
+        <!-- <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">GitHub</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="https://github.com/shawn-mcgee" target="_blank">
             <Github class="w-8 h-8" />
           </a>
-        </div>
+        </div> -->
 
         <!-- Link to Itch.io -->
-        <div class="tooltip tooltip-bottom">
+        <!-- <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">Itch.io</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="https://shawn-mcgee.itch.io" target="_blank">
             <Itchio class="w-8 h-8" />
           </a>
-        </div>
+        </div> -->
 
-        <!-- Link to About -->
+        <!-- Link to Contact Me -->
         <div class="tooltip tooltip-bottom">
-          <span class="tooltip-content">About</span>
-          <a class="btn btn-ghost btn-circle btn-lg" href="/about">
-            <BadgeQuestionMark class="w-8 h-8" />
+          <span class="tooltip-content">Contact Me</span>
+          <a class="btn btn-ghost btn-circle btn-lg" href="/hire-me">
+            <Mail class="w-8 h-8" />
           </a>
         </div>
 
+        
+
+        <!-- Link to About -->
+        <div class="tooltip tooltip-bottom">
+          <span class="tooltip-content">Learn About Me</span>
+          <a class="btn btn-ghost btn-circle btn-lg" href="/about">
+            <CircleQuestionMark class="w-8 h-8" />
+          </a>
+        </div>
+
+
+
       </div>
+
+      <div class="grow"></div>
+
+      <a href="#about" class="w-full m-12 flex justify-center *:opacity-10 hover:*:opacity-50 *:transition-opacity *:duration-100">
+        <ChevronDown class="w-12 h-12" />
+      </a>
     </div>
-    <a id="ideas"></a>
+
+    <a id="about"></a>
+
+    <div class="flex flex-col w-full min-h-dvh items-center gap-2 self-center">
+
+      <div class="grow"></div>
+
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="developer">Developer</h2>
+      <p class="text-lg max-w-lg text-left mx-4">
+        <em>Technology should serve people, not the other way around.</em> I build software that respects people's time and keeps them in control of their data.
+      </p>
+
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="teacher">Teacher</h2>
+      <p class="text-lg max-w-lg text-left mx-4">
+        <em>Technology is for everyone, not just programmers.</em> I love helping people understand the tools they use because understanding builds competence. Whether I'm teaching students in a classroom or walking a client through a new workflow, my goal is always to leave people more capable than when we met.
+      </p>
+
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
+      <p class="text-lg max-w-lg text-left mx-4">
+        <em>Tomorrow starts today.</em> Becoming a father changed the way I think about the future. Every project I take on is another opportunity to leave the world a little better than I found it.
+      </p>
+
+      <div class="grow"></div>
+
+      <a href="#skills" class="hidden w-full m-12 sm:flex justify-center *:opacity-5 hover:*:opacity-50 *:transition-opacity *:duration-100">
+        <ChevronDown class="w-12 h-12" />
+      </a>
+    </div>
+
+    <a id="skills"></a>
+    <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
+
+      <a href="#i-am" class="hidden w-full m-12 sm:flex justify-center *:opacity-5 hover:*:opacity-50 *:transition-opacity *:duration-100">
+        <ChevronUp class="w-12 h-12" />
+      </a>
+
+      <div class="grow"></div>
+
+      <h2 class="text-4xl mt-8 text-accent font-(family-name:--font-bungee)" id="skills">Skills</h2>
+
+      <p class="text-lg w-md text-left">
+        I am always learning something new. Here are just a few of the tools I have used to build cool stuff.
+      </p>
+
+      <p class="flex flex-wrap justify-between w-md mt-4 gap-1">
+        <span class="badge badge-ghost">Java</span>
+        <span class="badge badge-ghost">Kotlin</span>
+        <span class="badge badge-ghost">Python</span>
+        <span class="badge badge-ghost">JavaScript</span>
+        <span class="badge badge-ghost">TypeScript</span>
+        <span class="badge badge-ghost">C#</span>
+        <span class="badge badge-ghost">C++</span>
+        <span class="badge badge-ghost">Rust</span>
+        <span class="badge badge-ghost">Node.js</span>
+        <span class="badge badge-ghost">Deno</span>
+        <span class="badge badge-ghost">Bun</span>
+        <span class="badge badge-ghost">npm</span>
+        <span class="badge badge-ghost">React</span>
+        <span class="badge badge-ghost">Svelte</span>
+        <span class="badge badge-ghost">Vue</span>
+        <span class="badge badge-ghost">Astro</span>
+        <span class="badge badge-ghost">Vite</span>
+        <span class="badge badge-ghost">TailwindCSS</span>
+        <span class="badge badge-ghost">CSS</span>
+        <span class="badge badge-ghost">HTML</span>
+        <span class="badge badge-ghost">Markdown</span>
+        <span class="badge badge-ghost">Unity</span>
+        <span class="badge badge-ghost">Godot</span>
+        <span class="badge badge-ghost">GdScript</span>
+        <span class="badge badge-ghost">Git</span>
+        <span class="badge badge-ghost">GitHub</span>
+        <span class="badge badge-ghost">GitLab</span>
+        <span class="badge badge-ghost">Google Apps Script</span>
+        <span class="badge badge-ghost">Cloudflare</span>
+        <span class="badge badge-ghost">Bash</span>
+        <span class="badge badge-ghost">Powershell</span>
+        <span class="badge badge-ghost">YAML</span>
+        <span class="badge badge-ghost">JSON</span>
+        <span class="badge badge-ghost">Linux</span>
+        <span class="badge badge-ghost">Android</span>
+        <span class="badge badge-ghost">Qt</span>
+        <span class="badge badge-ghost">Arduino</span>
+      </p>
+
+      <h2 class="text-4xl mt-8 flex gap-1 items-center text-accent font-(family-name:--font-bungee)">Contact</h2>
+
+      <p class="text-lg w-md text-left">
+        If you're building something cool, or just want to connect, I'd love to hear from you.
+      </p>
+
+      <a href="mailto:shawn.maurice.mcgee@email.com" class="text-lg underline">
+        shawn.maurice.mcgee@gmail.com
+      </a>
+
+      <div class="grow"></div>
+    </div>
 
     <div class="w-full flex flex-col justify-center items-center h-96">
       <span>Some Ideas Here</span>

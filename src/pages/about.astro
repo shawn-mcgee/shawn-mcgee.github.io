@@ -1,7 +1,7 @@
 ---
 import ToggleTheme from "@components/theme/toggle-theme.astro";
 import Layout from "@layouts/layout.astro";
-import { Heart } from "@lucide/astro";
+import { Heart, Star } from "@lucide/astro";
 ---
 
 <Layout>
@@ -10,56 +10,60 @@ import { Heart } from "@lucide/astro";
       <div class="fixed right-4 top-4">
         <ToggleTheme/>
       </div>
-
       <span class="text-4xl text-primary font-(family-name:--font-bungee)">Howdy, I'm Shawn.</span>
-      <ol>
-        <li>
-          <div class="tooltip tooltip-left">
-            <span class="tooltip-content">#dad</span>
-            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
-              <Heart/> I love being a Dad.
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="tooltip tooltip-left">
-            <span class="tooltip-content">#teacher</span>
-            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
-              <Heart/> I love learning and sharing.
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="tooltip tooltip-left">
+
+
+      <ol class="flex flex-col mt-6">
+
+        <li class="flex grow">
+          <div class="tooltip tooltip-left flex grow">
             <span class="tooltip-content">#developer</span>
-            <a class="btn btn-ghost text-lg font-normal" href="#i-love">
-              <Heart/> I love building software for humans.
+            <a class="btn btn-ghost text-lg font-normal grow justify-start" href="#i-am">
+              <Star/> I build software for humans.
             </a>
           </div>
         </li>
+
+        <li class="flex grow">
+          <div class="tooltip tooltip-left flex grow">
+            <span class="tooltip-content">#teacher</span>
+            <a class="btn btn-ghost text-lg font-normal grow justify-start" href="#i-am">
+              <Star/> I teach humans about technology.
+            </a>
+          </div>
+        </li>
+
+        <li class="flex grow">
+          <div class="tooltip tooltip-left flex grow">
+            <span class="tooltip-content">#dad</span>
+            <a class="btn btn-ghost text-lg font-normal grow justify-start" href="#i-am">
+              <Star/> I am a dad with a dream.
+            </a>
+          </div>
+        </li>
+
+
       </ol>
     </div>
 
-    <a id="i-love"></a>
+    <a id="i-am"></a>
     <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
 
-      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
-
-      <p class="text-lg w-md text-left">
-        Every day I choose to make my world better so my daughter can live free of the burdens that have haunted my own life.
-      </p>
-  
-      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="teacher">Teacher</h2>
-
-      <p class="text-lg w-md text-left">
-        Teaching has many frustrations, but sharing moments steeped in the joy of discovery and creation makes it worthwhile.
-      </p>
-  
       <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="developer">Developer</h2>
-
-      <p class="text-lg w-md text-left">
-        In a world of AI and surveillance capitalism, I care about developing free and open source software that respects people's time and keeps them in control of their data.
+      <p class="text-lg w-lg text-left">
+        <em>Technology should serve people, not the other way around.</em> I build software that respects people's time and keeps them in control of their data.
       </p>
+
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="teacher">Teacher</h2>
+      <p class="text-lg w-lg text-left">
+        <em>Technology is for everyone, not just programmers.</em> I love helping people understand the tools they use because understanding builds competence. Whether I'm teaching students in a classroom or walking a client through a new workflow, my goal is always to leave people more capable than when we met.
+      </p>
+
+      <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
+      <p class="text-lg w-lg text-left">
+        <em>Tomorrow starts today.</em> Becoming a father changed the way I think about the future. Every project I take on is another opportunity to leave the world a little better than I found it.
+      </p>
+
     </div>
 
     <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
@@ -99,6 +103,7 @@ import { Heart } from "@lucide/astro";
         <span class="badge badge-ghost">GitHub</span>
         <span class="badge badge-ghost">GitLab</span>
         <span class="badge badge-ghost">Google Apps Script</span>
+        <span class="badge badge-ghost">Cloudflare</span>
         <span class="badge badge-ghost">Bash</span>
         <span class="badge badge-ghost">Powershell</span>
         <span class="badge badge-ghost">YAML</span>
