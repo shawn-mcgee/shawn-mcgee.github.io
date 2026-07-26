@@ -1,7 +1,7 @@
 ---
 import ToggleTheme from "@components/theme/toggle-theme.astro";
 import Layout from "@layouts/layout.astro";
-import { BadgeQuestionMark, Check, ChevronDown, ChevronUp, CircleQuestionMark, FlaskConical, Mail, Star, UserSearch } from "@lucide/astro";
+import { ChevronDown, Star, User } from "@lucide/astro";
 import Github from "@ui/components/icons/Github.astro";
 import Itchio from "@ui/components/icons/Itchio.astro";
 
@@ -30,7 +30,23 @@ import SlotMachine from "@ui/components/fun/SlotMachine";
       <!-- <span class="text-2xl text-center hidden sm:block italic m-1">I write software for <strong>Humans</strong></span> -->
 
       
-      <SlotMachine client:visible />
+      <SlotMachine phrases={[        
+        "I make stuff for <b>humans</b>.",
+        "I write software for <b>humans</b>.",
+        "I solve problems for <b>humans</b>.",
+        "I teach <b>humans</b> about programming.",
+        "I teach <b>humans</b> about technology.",
+        "<b>Human</b> making stuff for other <b>humans</b>.",
+        "<b>Human</b> writing software for other <b>humans</b>.",
+        "<b>Human</b> solving problems for other <b>humans</b>.",
+        "<b>Human</b> teaching <b>humans</b> about programming.",
+        "<b>Human</b> teaching <b>humans</b> about technology.",
+        "<b>Dad</b> making stuff for other <b>humans</b>.",
+        "<b>Dad</b> writing software for other <b>humans</b>.",
+        "<b>Dad</b> solving problems for other <b>humans</b>.",
+        "<b>Dad</b> teaching <b>humans</b> about programming.",
+        "<b>Dad</b> teaching <b>humans</b> about technology.",
+      ]} client:visible />
 
       <!-- Links -->
       <div class="flex flex-row gap-2 mt-1">
@@ -43,70 +59,100 @@ import SlotMachine from "@ui/components/fun/SlotMachine";
           </a>
         </div> -->
 
+        <!-- Link to Contact Me -->
+        <div class="tooltip tooltip-bottom">
+          <span class="tooltip-content">Work With Me</span>
+          <a class="btn btn-ghost btn-circle btn-lg" href="/services">
+            <Star class="w-8 h-8" />
+          </a>
+        </div>
+
+        <!-- Link to About -->
+        <div class="tooltip tooltip-bottom">
+          <span class="tooltip-content">About Me</span>
+          <a class="btn btn-ghost btn-circle btn-lg" href="#howdy">
+            <User class="w-8 h-8" />
+          </a>
+        </div>
+
         <!-- Link to GitHub -->
-        <!-- <div class="tooltip tooltip-bottom">
+        <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">GitHub</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="https://github.com/shawn-mcgee" target="_blank">
             <Github class="w-8 h-8" />
           </a>
-        </div> -->
+        </div>
 
         <!-- Link to Itch.io -->
-        <!-- <div class="tooltip tooltip-bottom">
+        <div class="tooltip tooltip-bottom">
           <span class="tooltip-content">Itch.io</span>
           <a class="btn btn-ghost btn-circle btn-lg" href="https://shawn-mcgee.itch.io" target="_blank">
             <Itchio class="w-8 h-8" />
           </a>
-        </div> -->
-
-        <!-- Link to Contact Me -->
-        <div class="tooltip tooltip-bottom">
-          <span class="tooltip-content">Contact Me</span>
-          <a class="btn btn-ghost btn-circle btn-lg" href="/hire-me">
-            <Mail class="w-8 h-8" />
-          </a>
         </div>
-
-        
-
-        <!-- Link to About -->
-        <div class="tooltip tooltip-bottom">
-          <span class="tooltip-content">Learn About Me</span>
-          <a class="btn btn-ghost btn-circle btn-lg" href="/about">
-            <CircleQuestionMark class="w-8 h-8" />
-          </a>
-        </div>
-
-
-
       </div>
 
       <div class="grow"></div>
 
-      <a href="#about" class="w-full m-12 flex justify-center *:opacity-10 hover:*:opacity-50 *:transition-opacity *:duration-100">
+      <a href="#howdy" class="w-full m-12 flex justify-center *:opacity-10 hover:*:opacity-50 *:transition-opacity *:duration-100">
         <ChevronDown class="w-12 h-12" />
       </a>
     </div>
 
-    <a id="about"></a>
+    <a id="howdy"></a>
+    <div class="w-full h-dvh flex flex-col justify-center items-center">
+      <span class="text-4xl text-primary font-(family-name:--font-bungee)">Howdy, I'm Shawn.</span>
 
+      <ol class="flex flex-col mt-6">
+
+        <li class="flex grow">
+          <div class="tooltip tooltip-left flex grow">
+            <span class="tooltip-content">#developer</span>
+            <a class="btn btn-ghost text-lg font-normal grow justify-start" href="#i-am">
+              <Star/> I write software for humans.
+            </a>
+          </div>
+        </li>
+
+        <li class="flex grow">
+          <div class="tooltip tooltip-left flex grow">
+            <span class="tooltip-content">#teacher</span>
+            <a class="btn btn-ghost text-lg font-normal grow justify-start" href="#i-am">
+              <Star/> I teach humans about technology.
+            </a>
+          </div>
+        </li>
+
+        <li class="flex grow">
+          <div class="tooltip tooltip-left flex grow">
+            <span class="tooltip-content">#dad</span>
+            <a class="btn btn-ghost text-lg font-normal grow justify-start" href="#i-am">
+              <Star/> I am a dad with a dream.
+            </a>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    
+    <a id="i-am"></a>
     <div class="flex flex-col w-full min-h-dvh items-center gap-2 self-center">
 
       <div class="grow"></div>
 
       <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="developer">Developer</h2>
       <p class="text-lg max-w-lg text-left mx-4">
-        <em>Technology should serve people, not the other way around.</em> I build software that respects people's time and keeps them in control of their data.
+        <em><strong>Technology should serve people, period.</strong></em> I develop software that respects people's time and keeps them in control of their data.
       </p>
 
       <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="teacher">Teacher</h2>
       <p class="text-lg max-w-lg text-left mx-4">
-        <em>Technology is for everyone, not just programmers.</em> I love helping people understand the tools they use because understanding builds competence. Whether I'm teaching students in a classroom or walking a client through a new workflow, my goal is always to leave people more capable than when we met.
+        <em><strong>Technology is for everyone.</strong></em> I love helping people understand the tools they use because understanding builds competence. Whether I'm teaching students in a classroom or walking a client through a new workflow, my goal is always to leave humans more capable than when we met.
       </p>
 
       <h2 class="text-4xl mt-8 text-primary font-(family-name:--font-bungee)" id="dad">Dad</h2>
       <p class="text-lg max-w-lg text-left mx-4">
-        <em>Tomorrow starts today.</em> Becoming a father changed the way I think about the future. Every project I take on is another opportunity to leave the world a little better than I found it.
+        <em><strong>The future belongs to the next generation.</strong></em> Becoming a father changed the way I think about the future. Each student I teach and every project I take on is another opportunity to leave the world a little better than I found it.
       </p>
 
       <div class="grow"></div>
@@ -116,12 +162,10 @@ import SlotMachine from "@ui/components/fun/SlotMachine";
       </a>
     </div>
 
+    
+
     <a id="skills"></a>
     <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
-
-      <a href="#i-am" class="hidden w-full m-12 sm:flex justify-center *:opacity-5 hover:*:opacity-50 *:transition-opacity *:duration-100">
-        <ChevronUp class="w-12 h-12" />
-      </a>
 
       <div class="grow"></div>
 
@@ -171,10 +215,21 @@ import SlotMachine from "@ui/components/fun/SlotMachine";
         <span class="badge badge-ghost">Arduino</span>
       </p>
 
+      <div class="grow"></div>
+
+      <a href="#contact" class="hidden w-full m-12 sm:flex justify-center *:opacity-5 hover:*:opacity-50 *:transition-opacity *:duration-100">
+        <ChevronDown class="w-12 h-12" />
+      </a>
+    </div>
+
+    <a id="contact"></a>
+    <div class="flex flex-col w-full min-h-dvh justify-center items-center gap-2 self-center">
+      <div class="grow"></div>
+
       <h2 class="text-4xl mt-8 flex gap-1 items-center text-accent font-(family-name:--font-bungee)">Contact</h2>
 
       <p class="text-lg w-md text-left">
-        If you're building something cool, or just want to connect, I'd love to hear from you.
+        If you're trying to solve a problem, building something cool, or just want to connect I'd love to hear from you.
       </p>
 
       <a href="mailto:shawn.maurice.mcgee@email.com" class="text-lg underline">
@@ -182,10 +237,6 @@ import SlotMachine from "@ui/components/fun/SlotMachine";
       </a>
 
       <div class="grow"></div>
-    </div>
-
-    <div class="w-full flex flex-col justify-center items-center h-96">
-      <span>Some Ideas Here</span>
     </div>
   </div>
 </Layout>
